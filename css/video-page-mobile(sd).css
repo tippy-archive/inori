@@ -1,0 +1,112 @@
+@media (min-width: 0px) {
+
+    .navbar {
+        height: 31px;
+        padding: 0 2.5vw;
+        margin: 1vw 0;
+        text-align: center;
+    }
+
+    .navbar a {
+        float: none;
+        padding: 0 20px;
+        font-size: 12px;
+        line-height: 31px;
+    }
+
+    .navbar a.main-title:hover {
+        text-shadow: 0 0 10px black;
+    }
+
+    .navbar a.next {
+        display: none;
+    }
+    
+    .navbar a.year {
+        display: none;
+    }
+
+    .navbar a.sub-menu {
+        display: none;
+    }
+    
+    .navbar a.sub-title {
+        display: none;
+    }
+
+    .navbar a.sub-menu:hover {
+        display: none;
+    }
+
+    .video-page {
+        grid-template-columns: 98vw;
+        grid-template-rows: 73.5vw 19px 19px auto;
+        gap: 1vw;
+        padding: 0 0 1vw 0;
+    }
+
+    .main-video {
+        width: 98vw;
+        height: 73.5vw;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .video-main iframe {
+        width: 98vw;
+        height: 73.5vw;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    #main-video-title {
+        font-size: 14px;
+        padding: 0 0 0 2vw;
+        margin: 0;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    #main-video-subtitle {
+        font-size: 14px;
+        padding: 0 0 0 2vw;
+        margin: 0;
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .main-playlist {
+        width: 98vw;
+        height: calc(100vh - 79.5vw - 69px);
+        margin: 0;
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+
+    .main-playlist::-webkit-scrollbar {
+        display: block;
+        width: 8px;
+    }
+
+    .main-playlist::-webkit-scrollbar-thumb {
+        display: block;
+        border-radius: 8px;
+    }
+
+    .playlist-img {
+        width: 35vw;
+        height: 26.25vw;
+        padding: 1px 2px;
+    }
+
+    .playlist-title {
+        width: auto;
+        font-size: 12px;
+        padding: 0 0 0 4px;
+    }
+
+    #gttopbtn {
+        display: none;
+    }
+
+}

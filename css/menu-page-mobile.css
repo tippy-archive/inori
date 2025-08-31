@@ -1,0 +1,95 @@
+@media (min-width: 0px) {
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .header {
+        background-size: 100vw auto;
+        background-position: 50% 0;
+    }
+
+    .header-title {
+        font-size: 20px;
+        padding: calc((56.25vw - 25px) / 2) 0;
+    }
+
+    .navbar {
+        height: 31px;
+        padding: 0 20px;
+    }
+
+    .navbar-title {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    .navbar a.navbar-title:hover {
+        text-shadow: 0 0 10px black;
+    }
+
+    .google-login img {
+        height: 27px;
+        padding: 2px 0;
+    }
+
+    .row-side {
+        display: none;
+    }
+
+    .row-side a {
+        display: none;
+    }
+
+    .row-side ul {
+        display: none;
+    }
+
+    .row-side ul:hover {
+        display: none;
+    }
+
+    .side-thumb-img {
+        display: none;
+    }
+
+    .row-main {
+        width: 98vw;
+        padding: 0 1vw 1vw 1vw;
+    }
+
+    .main-middle {
+        font-size: 12px;
+        padding: 6px;
+        margin: 1vw 0;
+    }
+
+    .list-select {
+        width: calc(98vw / 3);
+    }
+
+    .list-img img {
+        width: calc((98vw - 12px) / 3);
+        height: calc(((98vw - 12px) / 3) * 1.5);
+        padding: 2px 2px 0 2px;
+    }
+
+    .list-title {
+        height: 60px;
+        padding: 0 2px 2px 2px;
+        font-size: 10px;
+    }
+
+    footer {
+        padding: 6px 0px;
+        font-size: 12px;
+    }
+
+    #gttopbtn {
+        padding: 8px 16px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 10px;
+    }
+
+}
