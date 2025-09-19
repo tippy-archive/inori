@@ -4,7 +4,7 @@
  
  body::-webkit-scrollbar-thumb {
     display: none;
-    background-color: #aaaaaa;
+    background-color: #A0A0A0;
     background-clip: padding-box;
     border: 2px solid transparent;
 }
@@ -16,7 +16,7 @@
 
 .navbar a {
     float: left;
-    color: #ffffff;
+    color: #FFFFFF;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -72,7 +72,7 @@
  
 .main-playlist::-webkit-scrollbar-thumb {
     display: none;
-    background-color: #AAAAAA;
+    background-color: #A0A0A0;
     background-clip: padding-box;
     border: 2px solid transparent;
 }
@@ -85,7 +85,7 @@
 }
 
 .playlist-main.selected {
-    background-color: #DBBBFB;
+    background-color: #D3ABFB;
     border-radius: 8px;
 }
 

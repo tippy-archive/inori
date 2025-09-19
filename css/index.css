@@ -63,15 +63,15 @@ img {
     display: none;
     position: fixed;
     font-weight: bold;
-    color: #ffffff;
+    color: #FFFFFF;
     border: none;
     outline: none;
-    background-color: #CB96FF;
+    background-color: #D3ABFB;
     cursor: pointer;
     border-radius: 8px;
 }
 
 #gttopbtn:hover {
     color: #000000;
-    background-color: #ECD9FF;
+    background-color: #E7D3FB;
 }

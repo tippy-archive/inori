@@ -6,7 +6,7 @@
     }
 
     body::-webkit-scrollbar-thumb {
-        background-color: #aaaaaa;
+        background-color: #A0A0A0;
         background-clip: padding-box;
         border: 2px solid transparent;
         border-radius: 10px;
@@ -46,7 +46,7 @@
         display: block;
         width: 300px;
         padding: 25px;
-        background-color: #f0f0f0;
+        background-color: #F0F0F0;
         overflow: hidden;
         text-align: center;
         flex-direction: column;
@@ -54,7 +54,7 @@
 
     .row-side a {
         display: block;
-        color: #000;
+        color: #000000;
         font-size: 18px;
         padding: 10px 0 0 0;
         text-decoration: none;
@@ -71,7 +71,7 @@
 
     .row-side ul:hover {
         display: block;
-        background-color: #ECD9FF;
+        background-color: #DBBBFB;
         border-radius: 8px;
     }
 
