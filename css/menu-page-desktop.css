@@ -150,3 +150,17 @@
     }
 
 }
+
+@media (min-width: 3840px) {
+
+    .list-select {
+        width: calc((100vw - 380px) / 8);
+    }
+
+    .list-img img {
+        width: calc((100vw - 428px) / 8);
+        height: calc(((100vw - 428px) / 8) * 1.5);
+        padding: 4px 4px 0 4px;
+    }
+
+}
