@@ -4,7 +4,6 @@
         height: 31px;
         padding: 0 2.5vw;
         margin: 1vw 0;
-        text-align: center;
     }
 
     .navbar a {
@@ -14,6 +13,10 @@
         line-height: 31px;
     }
 
+    .navbar a.main-title {
+        display: block;
+    }
+
     .navbar a.main-title:hover {
         text-shadow: 0 0 10px black;
     }
@@ -21,20 +24,20 @@
     .navbar a.next {
         display: none;
     }
-    
+
     .navbar a.year {
         display: none;
     }
 
-    .navbar a.sub-menu {
+    .navbar a.year:hover {
         display: none;
     }
-    
+
     .navbar a.sub-title {
         display: none;
     }
 
-    .navbar a.sub-menu:hover {
+    .navbar a.sub-title:hover {
         display: none;
     }
 

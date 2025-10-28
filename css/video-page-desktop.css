@@ -21,6 +21,10 @@
         line-height: 51px;
     }
 
+    .navbar a.main-title {
+        display: block;
+    }
+
     .navbar a.main-title:hover {
         text-shadow: 0 0 20px black;
     }
@@ -32,21 +36,20 @@
     
     .navbar a.year {
         display: block;
-        text-shadow: none;
     }
 
-    .navbar a.sub-menu {
+    .navbar a.year:hover {
         display: block;
+        text-shadow: 0 0 20px black;
     }
 
     .navbar a.sub-title {
         display: block;
-        text-shadow: none;
     }
 
-    .navbar a.sub-menu:hover {
+    .navbar a.sub-title:hover {
         display: block;
-        text-shadow: 0 0 16px black;
+        text-shadow: 0 0 20px black;
     }
 
     .video-page {

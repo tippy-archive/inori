@@ -13,6 +13,10 @@
         line-height: 51px;
     }
 
+    .navbar a.main-title {
+        display: block;
+    }
+
     .navbar a.main-title:hover {
         text-shadow: 0 0 16px black;
     }
@@ -20,20 +24,20 @@
     .navbar a.next {
         display: none;
     }
-    
+
     .navbar a.year {
         display: none;
     }
 
-    .navbar a.sub-menu {
+    .navbar a.year:hover {
         display: none;
     }
-    
+
     .navbar a.sub-title {
         display: none;
     }
 
-    .navbar a.sub-menu:hover {
+    .navbar a.sub-title:hover {
         display: none;
     }
 
@@ -135,6 +139,10 @@
         float: left;
     }
 
+    .navbar a.main-title {
+        display: block;
+    }
+
     .navbar a.main-title:hover {
         text-shadow: 0 0 16px black;
     }
@@ -146,19 +154,18 @@
     
     .navbar a.year {
         display: block;
-        text-shadow: none;
     }
 
-    .navbar a.sub-menu {
+    .navbar a.year:hover {
         display: block;
+        text-shadow: 0 0 16px black;
     }
 
     .navbar a.sub-title {
         display: block;
-        text-shadow: none;
     }
 
-    .navbar a.sub-menu:hover {
+    .navbar a.main-title:hover {
         display: block;
         text-shadow: 0 0 16px black;
     }
@@ -185,7 +192,7 @@
     .main-playlist {
         width: calc(100vw - 30px);
         max-width: 1120px;
-        min-height: calc(100vh - (((100vw - 20px) * 0.5625) + 159px));
+        min-height: calc(100vh - (630px + 159px));
         height: auto;
     }
 
