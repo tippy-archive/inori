@@ -103,7 +103,7 @@
     }
 
     .playlist-title {
-        width: auto;
+        width: calc(100vw - 37vw - 20px);
         font-size: 12px;
         padding: 0 0 0 4px;
     }

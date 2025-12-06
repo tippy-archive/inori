@@ -132,11 +132,16 @@
     }
 
     .navbar {
+        height: 51px;
         padding: 0 max(30px, calc((100vw - 1090px) / 2));
+        margin: 10px 0;
     }
 
     .navbar a {
         float: left;
+        padding: 0 10px;
+        font-size: 20px;
+        line-height: 51px;
     }
 
     .navbar a.main-title {
@@ -151,7 +156,7 @@
         display: block;
         text-shadow: none;
     }
-    
+   
     .navbar a.year {
         display: block;
     }
@@ -165,7 +170,7 @@
         display: block;
     }
 
-    .navbar a.main-title:hover {
+    .navbar a.sub-title:hover {
         display: block;
         text-shadow: 0 0 16px black;
     }
