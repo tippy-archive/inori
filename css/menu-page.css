@@ -64,13 +64,13 @@
     justify-content: flex-start;
 }
 
+.main-list a {
+    text-decoration: none;
+}
+
 .main-list :hover {
     background-color: #DBBBFB;
     border-radius: 8px;
-}
-
-.list-select a {
-    text-decoration: none;
 }
 
 .list-img img {
