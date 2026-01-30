@@ -197,8 +197,7 @@
     .main-playlist {
         width: calc(100vw - 30px);
         max-width: 1120px;
-        min-height: calc(100vh - (((100vw - 30px) * 0.5625) + 159px));
-        max-height: calc(100vh - (630px + 159px));
+        min-height: calc(100vh - (630px + 159px));
         height: auto;
     }
 
