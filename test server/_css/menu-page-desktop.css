@@ -109,9 +109,12 @@
         font-size: 18px;
     }
 
-    footer {
+    .site-footer {
         font-size: 20px;
-        padding: 12px 0px;
+    }
+
+    .footer-version {
+        margin-left: auto;
     }
 
     #gototop {
