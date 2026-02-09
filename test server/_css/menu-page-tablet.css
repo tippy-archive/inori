@@ -87,8 +87,9 @@
         font-size: 18px;
     }
 
-    .site-footer {
+    footer {
         font-size: 18px;
+        padding: 12px 0px;
     }
 
     #gototop {
@@ -136,8 +137,9 @@
         height: calc(((100vw - 54px) / 3) * 1.5);
     }
 
-    .site-footer {
+    footer {
         font-size: 20px;
+        padding: 12px 0px;
     }
 
 }
