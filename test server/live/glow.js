@@ -1,0 +1,123 @@
+var delay = 6000
+var stopAfter = 60 * 1000;
+
+var curindex = 0
+var currentActiveImageId = 'image1';
+
+var randomimages = new Array()
+
+randomimages[0] = "https://lh3.googleusercontent.com/pw/AP1GczMq9UBYp6bgYqtW3h9SX6lgNVFJZZ1_qPnX5XWbH0mIKMy6MbJRn3HiOJXX8-IijzZ2_QMef0Mk5kiJUSoMawP0dq252Kid5tS3-hL3y0HUk_PJsoIFHVarSJdiryF5KhgaG28cSGBV6UfJJ-4ANypv=w1920-h1080"
+randomimages[1] = "https://lh3.googleusercontent.com/pw/AP1GczPqQBuVR25Y2J6ejBMc6qEK4ElYlW798VXG9Y4qASZORk21yH75h0Nn0crF1DK0rScE0_yVzGXRU6dCsHw5wbrHUwD-Hs1twFXFCyAyPAQvuMeMStQITCrccjrTVw0PSE3qQc3c2t9xVME1mpDfjtX5=w1920-h1080"
+randomimages[2] = "https://lh3.googleusercontent.com/pw/AP1GczNR9rLPdc9m7NHiKE5rJ9e0wMxQ61uZSt0CPhDDg2BYmkPs-KJH22giqX1wkTcBzSQElbx_FTXQIZx6JstmM8W2UO4gPeDpFwRJsrDjW9d55zu8YBsFfJim5OXI9lTG6HNcNJEBL3Grb368ZQdcNqvr=w1920-h1080"
+randomimages[3] = "https://lh3.googleusercontent.com/pw/AP1GczPGgJsggMB-XplPw4AJKvAnwFjfKA2X11WuxfxRvuo5Dzr31eVtavbm07sCm-zcAJ27uuM5sgOQ41XGyyp5PWbKpq9o20DcvLei-xO7-aA166J_UIsqbBeCx-TEzfUbN9sBSUKGmUn7qYJUr_Is8dzZ=w1920-h1080"
+randomimages[4] = "https://lh3.googleusercontent.com/pw/AP1GczOEmoGC-Yok3J76OKnPZT9P7hIsajrA5ntuu-R5qRzJ59KCpxOxvyEyjvfIfb4MehoINNl_H2ZlEEv-P2-qfjGGG-hixBmjjA7ktjre21fJIHegeGFYsNyMMOvIJvYlXmvszRBY3_Ss4j4iq3E26STQ=w1920-h1080"
+randomimages[5] = "https://lh3.googleusercontent.com/pw/AP1GczPCvggZnHnbfrNwUEsozyjuKOAppV2bjswRh55f4mz6slCLAv-KwA63mPmjfeopCtigwxkwqctm5db9oEOjsL5ewgJy-A0N4SVtMyRYiak3lr8J1kh7sdv9QeEDcoZdGvG6S55Z6zFqg-U9O2AdFPoh=w1920-h1080"
+randomimages[6] = "https://lh3.googleusercontent.com/pw/AP1GczOy5fAT_3bdzxKbIe8LavydF_g6K70ItCn9lzQU-0O-Woq-mVu8yirBYqrVEfFp4DRtUuPA-Xz-VE8am6bjFTNni_LEWi6kfa3EYqIh3omBPwATKUXJzU8fMswmJ9mkATdaQYcFXVGjQp5pIJaZriS4=w1920-h1080"
+randomimages[7] = "https://lh3.googleusercontent.com/pw/AP1GczO1s7LEda2jELzEklwA7rqXv5BSWQYqXgPiL7SY5yBMZvtqSikuttx0OKMj7yUjNMvZ3OsyJeqD9P20sSNILow2htbErROWjax99apV_n3JL140TLmFBKOqORBPE8ixCdRcAeqeLMtgqrdffw7pCtpI=w1920-h1080"
+randomimages[8] = "https://lh3.googleusercontent.com/pw/AP1GczNYdr3QkLYtW7XAev5nkz0RntJgYgqwDt3-AgmGJQhkv8pdTPnDo89nvZt7MSRMZyEHcqdUpgWyhJh_5GVMJDkG1WjjrH3nSmvTLMk8MdKaWhHW-jXHlCG_pQOvnx7yFWKAHdBFvHJJS5X0Q3LA14Aq=w1920-h1080"
+randomimages[9] = "https://lh3.googleusercontent.com/pw/AP1GczMkanJPHsYi7_HUX6nqboBWtRLhFvzLphz5yLRveNTqOMxw8ItHp3HgpRcXpZk9EvppwxNxJ8GXWkIRBR42prab5DMMfBrMjBxPdxs0VqfIupB0GrsRkPFLksa4M99VqvBiJmwJMWVcaXd7YHJ537oG=w1920-h1080"
+randomimages[10] = "https://lh3.googleusercontent.com/pw/AP1GczPHVoh9uwsORRfLK8R26WtXqfXARhJE7FtQUuPq2yg58MK8GLkQ0O9ekXs8iBeciDevfZ296lHU0eEyX1aJW_DMRt1nBu4XLruPMBCmx184LIroJtmmPpvrsKO5tX0ZT2KiF5jY_J7IJdA-ZPPemied=w1920-h1080"
+randomimages[11] = "https://lh3.googleusercontent.com/pw/AP1GczNjPR7qz7u56KFhwXSQbFi1i4VNLVHH6S1MnasMcnuUMRft0YEwuMRp_t9zvVEUHA9UF4smjfxbZE24S5XImonA2u_hzYSqsY44rCQ87ahuMjrKZGnoDHA47QNJ17t9qaUMJayWMeeEY_i2U243I2Ox=w1920-h1080"
+randomimages[12] = "https://lh3.googleusercontent.com/pw/AP1GczNq10Y62nuMVg1TAscL_FXlXUJmuBIXgeZuhNoh6L2-gqo79je8P0wEYuB9gPUHHA7UcTGjonD8ZCGWpTj2AAq4skYhlm_fTGAJ0d2iSiCw98y8tpDson14jWCb4S9rtLhgh8mxeEH80i2rZroHO0vV=w1920-h1080"
+randomimages[13] = "https://lh3.googleusercontent.com/pw/AP1GczPbOGNu4ZJDfE5qaMwpLRW1QZ8chvVZZzWFcqWJp5w7WwPL-lgL9cGv3MBJcAIb1t7SYioGIRC33t4nNOMMADYuWLAHLhaP-AAePNTmvuIrG9rjQHKEnfguueIhLTY82448PKehxFrhTw74N4vqq02P=w1920-h1080"
+randomimages[14] = "https://lh3.googleusercontent.com/pw/AP1GczPP9Q2TQj9owstJTyMBKNcLJ8D8NkWWaDiaxWsX5zP2npGkW0F4vh5KCJJSoAhcXdivBrAYqwzmCNtb7nChK8LCX1cnZoiRiG_Ggz1IuGXC11J5uKbi8to1i6At-Gt2TAaEEdmX0M_0onlaOscXpXMB=w1920-h1080"
+randomimages[15] = "https://lh3.googleusercontent.com/pw/AP1GczPuxksT3MueNszkm9ys3GXd2sa-TN28mVWCxsm-DfIuyWHmxjYqtA8P6zgm8F91BUrdDsMZyt1YgAR_IjfAivvbY-wGiKylznRYTkSDOkuTSiB_3W8ICPY6YHxwlvPMbl11OU7SWBQZZlmA9Euexzs6=w1920-h1080"
+randomimages[16] = "https://lh3.googleusercontent.com/pw/AP1GczPimJxPN9fLzlu9Pe4kt6cMqKMLXQIGYzwvO4ZYlptEESxus6EowCJmrlC9KFeXKJd78sSyoPQ69zDzRST-tpA56r9FmpGj2uuRJCakodzXBaIZGTr8tdEIiCbVCYiSWvnfpzj42X8zTd8QO7lO7zkx=w1920-h1080"
+randomimages[17] = "https://lh3.googleusercontent.com/pw/AP1GczMCbCkpJTQ4UHWI0kEnGeDmdrKtPyZ7hJ2Gi9QlXNg7_RY3_tLYDczDsdEauY7EhjOI1QX1NiA9zis0RistrGYEYeCrGPPddwhE7pV_7OyggYkDlznUxTi_EhtNQ551okEa9jb0bJCy5X83vUQWtifE=w1920-h1080"
+randomimages[18] = "https://lh3.googleusercontent.com/pw/AP1GczMSmleX9vJ2HVML8Mm8sVZ69xfOVtVVY2V3UhmB9IrEnO6jBlb1wAQNLCwmRbn2eoZu6VajunmVj7jaYFKybVFpIZfDi79ZyoDTQi4STz-rpB_0oDVgoeluVbM17knhWKaFD8KI7atyNYowc7YOqq9c=w1920-h1080"
+randomimages[19] = "https://lh3.googleusercontent.com/pw/AP1GczOGOoBZZQw3xgOYPHIw9bpXBImp3w0c49cml0Ykzm3m89DNj0_Wsyf0F2YFoy81jHb2_04UqWpeu1GD4G91rqye5yZr_9v4s1s5DOKvbqemFxQSQjPZg1Eaq1fHG3JdKUaEUl8X43Z5XvTDccc1gnCD=w1920-h1080"
+randomimages[20] = "https://lh3.googleusercontent.com/pw/AP1GczMx5171mPkGRMsgIqkBuC45YPiukA1mcSMxITDZmwPEvL0-MRdZpFr5ktx5aj7bGfbQjcJC_e_IBDD4RxxlXDcWZVzD057ljcVXdvB1nmiBRXvqnfrZrY43wkleMXJkxYp_Ccp3uqwKOjkLxiCdz_kz=w1920-h1080"
+randomimages[21] = "https://lh3.googleusercontent.com/pw/AP1GczPCP0EkbhnACMtb2rd30tQwSMbFLpoq74EhrCucY4SMWUcr69VRJGvlBs5a1ToLZK-c-CxCliY0_mUboPFCvjc1VzU9QZMPGPe7W6_nnOmyMnFQW_7mb3_AhU1Kj3i059AxDe03yGPYtxXAgcMarK9-=w1920-h1080"
+randomimages[22] = "https://lh3.googleusercontent.com/pw/AP1GczP8_Ye9vOXhxNZxQRwCGBacdN0F0YpeBc4NmKx9do6GFJlWGBhNugB0yXaCPQ9PQvAMEmpSxJG_RuZEJ_77wNRWrLe0PoxSj7TBpYfzwTeZAzWzEBKBWOTdheCKdU3JfeUZBSv9pZ8Eosg92kWZXJkv=w1920-h1080"
+randomimages[23] = "https://lh3.googleusercontent.com/pw/AP1GczNERIHZlc0uE8cTNCFwSIrM_916d0ZjgjI4lRvJ1-veBqqFPPdQxgnbVlpc4zfQRGYiVzyFS65_fBr_2mIJPTQ8009u15RlQ0bVzpZxqKSkSoTBn4NO147EaRExLSXaQjXbKJ9aEGAxo9DR0QgRevYQ=w1920-h1080"
+randomimages[24] = "https://lh3.googleusercontent.com/pw/AP1GczPQMNiYXeMHqdAWXMEEWOoiW4zMCvJ41egDdVXvvGDkfyuyAp4y-wq-K8NWMEYI1quHGH-243a1Qg8lm0tcreW4TtcyqaGVXZxS4OxoqzncRaNhY7Wnq9gHO8WXnPkED0rO66LHys5SCga6djCvxgTg=w1920-h1080"
+randomimages[25] = "https://lh3.googleusercontent.com/pw/AP1GczMfNLtjTeKPgw7KTjQhcjTwgwgQTBzFn4-2Iu7isWVdS1aE_RU7edglS3eDfvAd2BQqmnACNdGNwkXhGr4TbzDx-RwVRfgN9GnnCRPYZRRsRaTeOcPh1g45iqqZ_p9dejswenQ-Hwm59Zx1ShUrEFl0=w1920-h1080"
+randomimages[26] = "https://lh3.googleusercontent.com/pw/AP1GczMfmbrIQvrzfwCy8shYpO3l3QnKKqrEfJoamnw-J9moIRt3yvVNuk-XFKEXxTV6J-R8QZBSN2NgwHRbydwakGMjDhfPO6m3n8vpBwCOS1f0_dc0ovkz8C9CQozQQqifTXS4tEI79oLNlPBKPHBSMBR5=w1920-h1080"
+randomimages[27] = "https://lh3.googleusercontent.com/pw/AP1GczNSguAiTC600pGKRDnftk3Bn0g1HSAvAks-JK1gVtznc3XGncqbkifmdDgVIE-I6NWutCjCDW4DqmsuccwNNGOfXunkKNUidZg9X36MkX5jGTEOwYKN-m5Fckf8XLeThvTUpini9uAS9PwMSgHhyYnD=w1920-h1080"
+randomimages[28] = "https://lh3.googleusercontent.com/pw/AP1GczMq3w9fLfQXzgttGli10s_VbjGF_TUKEQONSLMi-v79Yh3BRJ9dydwVSbmq1grn_FvBbXtDQPj4sFH97TXlUTOHTvxxJPRQj4_dnVvoPIJZgBktBBf3xVPIQbh7cH229sL8Zujb8DESkJeW678O2D4f=w1920-h1080"
+randomimages[29] = "https://lh3.googleusercontent.com/pw/AP1GczMveqBIA6lS7-kPS4u5QbM1dPoAUOyclZ4hxpLqVTFKx27R-cLTDr4c-EeNzpyIH-4bpxgBwtSoEsSHodPpNsJS6zH37pTB_Oexm91TESpG7r3a_nXUGjxVnGJwEJerCFKc2tNVU7TTYsB30nj_sRbg=w1920-h1080"
+randomimages[30] = "https://lh3.googleusercontent.com/pw/AP1GczN0TRnnKM0PcAUoCsnjgzW7vttq3F3LlbNUOrQbtm8RKHTCGDjwjB_1Yen-iwxXuCHvkwIOZs1S3DOV6OyfV3NckbSwqk0j6FVfYNdW4K7az9_5hpPjunWyoVLrvavP1Tmu3-kwo2NhPeUeut7CEamh=w1920-h1080"
+randomimages[31] = "https://lh3.googleusercontent.com/pw/AP1GczNgoIoEgluOWExlOYeMQQ0X-jrBqA_kwIBpjOWGabV0SUdykN1FbTEjDhDcAawirkXjdFo_vaJlmkhOWfKbruX8OUmE4KKUefibMgRPtUiaz2QpAcxu2qcebmYIkh-bzsCYxQxuRLO7bN4wO1sk9JuB=w1920-h1080"
+randomimages[32] = "https://lh3.googleusercontent.com/pw/AP1GczMPaHbIUf3YSQzD7Vo6FJH3mj9uLqxLIOqJdGe-8BaloWx044qZUVLlTgCa0FCUPzOg4hqWS2RLcpaUXqXFxI6UBsu3E8gvF4Y-db18qMuILNmlmeDR5vMPpDiQ0C_Kevd1u_xkPDIOyi7hkYD1xuZK=w1920-h1080"
+randomimages[33] = "https://lh3.googleusercontent.com/pw/AP1GczNFuZ4kPzAnNu_QWTb89zoxBb9Od5FESj2Ohs4JONiYbppp4ccK0blgWVDo8G6qwdOHZMZvPtm_gY-RdGHE8Ij6TiYqy7Fe3RahLfU89ocNJ7g9jWXCCUx4tHaXLVG6SqvLEREai4D_Oh6sCLXpNZ3_=w1920-h1080"
+randomimages[34] = "https://lh3.googleusercontent.com/pw/AP1GczMIwDwhIhw2V_9OSYGluVuRRtaUzvTVCtmbBIfYPZtbApbuupLGyZ2NLerlmUZIRPp8fsEtYKpVWJa68m2cnCMs-qraoMxDdyqC0UY4kMp9ZF6l_-O_kPjI-dtC6FAYL2IDhKxQV_4xIHWZjMsrCuq0=w1920-h1080"
+randomimages[35] = "https://lh3.googleusercontent.com/pw/AP1GczP6RXQlvz59xBxI7o4vA7THj_eUQreHFYqHludEXgVKIo3oHNy3UDBrviPskpZEEt3rQnOwZwYD4MXl-46_eq-fiFh-hawu4czze8FqJ9soBRypjzl_-wk1PzFeQCSX6BpMXHABBUa8T9HYC_3Rd3LT=w1920-h1080"
+randomimages[36] = "https://lh3.googleusercontent.com/pw/AP1GczMxASMhmIHy610w1qG8qzn5m7x5xR6_ZbWy1eqELN13avPmlMqLCQlz9FsLPznqFHRZFDFSmDD0fnVF5m0hUg-VCg_pPLKHDxLdFtbEMoONBgtEZYCecQdUq2ezjQ7K4f5tQPOT6YB1yQd2scArzC8J=w1920-h1080"
+randomimages[37] = "https://lh3.googleusercontent.com/pw/AP1GczMBLXnNxWxjLyNj2dORvL-lN7LQj1WQ8pCp3mii4K5TsdiAPKmmxS1riTFDBYab6q-KhnCQWcb2Kxi-SxyZ_kkdGzG6oHvC4KN_-Rk88aJOqdxyFF11GSX7A3GZ4dyPgRcoaAQIZCprv58rOQv02JEM=w1920-h1080"
+randomimages[38] = "https://lh3.googleusercontent.com/pw/AP1GczPtVd6qoqUmNgFksatUiI3dKyTF-6zZ2Et9-bIRX10Xj8hyfFJCtjWRHig43ti29tPJ1Qe3fJGsyGYOcp4bxa5kSu0R5wmu-mGpQAp0WGizEG1z4xZAo1ynvdOhXPicYzuwthO_nVkNIn1Qr3Ea_JMn=w1920-h1080"
+randomimages[39] = "https://lh3.googleusercontent.com/pw/AP1GczOEr5UNCIVGUPS8QxOh5m7NKPyskjwUB-ZUSzHZAobmLvXnAAbJqtjZB9K5nDJ6_VDZmw3O1HIrlii37AfWM2JPlL4xCfTw3VbFZhZdUcVJF0GKFou4J3xIPMdu8ftdMmddIHfrbWbUcfFtwqQgVeN0=w1920-h1080"
+randomimages[40] = "https://lh3.googleusercontent.com/pw/AP1GczNCNVp12TJywboqvlyaohiYBJGR5QH95d1vQpRuV60NCadRt1TzlAG9S2G6nIsraevaPDNwVV84lnJWv3faA8bfRyd3xXbWDVMJijA9_eGhL5kWc9VYrDxkKqxRYUFAv5deCihYKr6ImUZLg29OfnJy=w1920-h1080"
+randomimages[41] = "https://lh3.googleusercontent.com/pw/AP1GczM8bWXm6NX_6eR9TsG4IZ9dy0p3rAAKZEC5TRkfs-iY__26WArD3PgYhdWheBFWLz5ouT4bUJO7Ihqy-_kuhs8irYVS0zznkHj4RdUGAdcToUvx9J1r_7uJ47F_RfYiamqW7q6sbvICQ1lg8binpQfX=w1920-h1080"
+randomimages[42] = "https://lh3.googleusercontent.com/pw/AP1GczNA29UfdGF4cdZDImOHNGUmHT2CXzEy6vChCsqlzHq31JcHa-EmdowvfTX8XZMeV5xjm697TZH-8L21R8OKwtyQUrDhYxpshpP4z8AZh_Ld9rS8nOXZrAfvS2fR-5E-fQWWw5RekeyvbDE3GLJuR6jr=w1920-h1080"
+randomimages[43] = "https://lh3.googleusercontent.com/pw/AP1GczO6oEaKA0QrmUPKrHlbqEIcVTc8-rNK_UDvmdnOBL42DRtYLa9GnkB35Mc29PI2UUnk2gQR4rez7gGBt6mganWsOIQ4WQW1KsxUv1xMA4S1-dsb0zag34LjnsoHEz0LMO27ZrCJG1vgFekRLNrXX_jV=w1920-h1080"
+randomimages[44] = "https://lh3.googleusercontent.com/pw/AP1GczP6YaGzC4yzLfkGC6PXS4D1599RgW8qb4_Yw5HqZQdLVf8Rmz3NrIsAml9Cm0HENjiweqoy3kXSO1kmTyPdc4LYnGY-dRM9fvC1qBRz8p_7Hj0KsQb3XkDE7idfRNNgQAkRTjoL0nZ6y-h9TKh16fVI=w1920-h1080"
+randomimages[45] = "https://lh3.googleusercontent.com/pw/AP1GczP4LX3U5dLn0LGpxtDi-4XXoJ1uHKcUnN5Qc1SRmKO4B09UP4HVCBveQIfF2pIBS3jIHDydfMlV3CqlvLIHuhWg0wo_vy1EAybR8uzNDKCKBWFsHK-ct8mZsJBlgaJbhIOtVV0vMC5c4tt3YD80eaDE=w1920-h1080"
+randomimages[46] = "https://lh3.googleusercontent.com/pw/AP1GczONVnJ7gsa4d-Bq5_Ml7s6dHDe8We9oGxpaoFnG6iZ_rNh2vKp0fsiZ1sVOa_up8EvCdUeOqyKgFhjTs4114FCRgDgshL_LVc7uIGCARGR3LcBhaGK4-SAxuDbPneAVrFC6i8T9w-UEkLHU02PYgNol=w1920-h1080"
+randomimages[47] = "https://lh3.googleusercontent.com/pw/AP1GczPuzSI6-n7bNNtjmGYsYC0Cf94RNPfy_paOTJlUsotcYaScevnhyuOJzTnw1NjAkRHQW3qRk6PZAmXCKl_BjTPJs9pTj2ojxddDSJZYtKICDrjvl6R1smIzotyDy_h2oThdRgH4KsOvauo6ctFxQE-g=w1920-h1080"
+randomimages[48] = "https://lh3.googleusercontent.com/pw/AP1GczPTIW7CMEo2m8T9jzh-1ydhgRjMVCRiBa0iwmbUnuEERGTLV_-zi1Oqse4SK6sndlzg9Zq0yTeL3q-D9LOdGbUHxijwDlNnzvg3Ds135Ddha4dciWDudZAXb-vqK63lC7Ac5KG_15wJ1xv9Yazefyim=w1920-h1080"
+randomimages[49] = "https://lh3.googleusercontent.com/pw/AP1GczOtrZqVJdjwimpC2vG1R7Hzh7QxLhQeWjUr7uwVMGz6FAsBbxZJQgGlt-evLtQthVaGY0wJ6TFTJH6wyt4iDpzXwCYRhB6iMhyXP2yp-6QmZH8KQ00pfEJNw9Mc0ldBG9Cs3Fg8jYoa4jlg49Dt-2ga=w1920-h1080"
+randomimages[50] = "https://lh3.googleusercontent.com/pw/AP1GczO44j3qmgOZOloLN3qjree2DV35Sr68JwT6pbJ3h3JhVrD23PJmpFvyFbMfxhF-bEK-K53KvMK_gWY7RgLXhKKdrU2rEv3LYyFWop40ynUj--SPjW8NgJA2KU5_hOm3c0R0Gtz8m37FOF6fzqYhq-TW=w1920-h1080"
+randomimages[51] = "https://lh3.googleusercontent.com/pw/AP1GczOT9M6JbQi5xnCxTdqW-YoU-wy6V3uyJCphsPXshhhEX7HwWsoCnRR55rcSPyDKB4Hxg9yzWsiblrDTfpMHg4jto9RptivQEDVJOe-TftLIOXmv4lLgCKk-66y_X5VFBln4EckQhEU94LUXgOnekSym=w1920-h1080"
+randomimages[52] = "https://lh3.googleusercontent.com/pw/AP1GczODeWBcsnJNxMRuXq-B6nkWrpMhgi8WEBGw9Z8JD5m8yI3y2QrrGGLDMt1IaxeF9gJZf42lm_QMt9v1e1MkeEtsajuzrB_7MLQXns9M86S0cKVY_BtZ32drBvIAI8Iiprn0MlkxIf4RCewisHd-2Pau=w1920-h1080"
+randomimages[53] = "https://lh3.googleusercontent.com/pw/AP1GczPxryBmp1SlHWciCYdoGORSkcTs-DH3Q87mGrZyt1QZ_5c6ZegpkimvC0x4vmXtQgC4DIwuGpwGgZwuI4rYu5efpgab9sgfyWiIR3J8MtfYuY_90Hezfm-6-rauZcWRjnwYZk-NfffbidwLrLeezUT0=w1920-h1080"
+randomimages[54] = "https://lh3.googleusercontent.com/pw/AP1GczO1q6wwzCnflcYwH5y3MosI_kuezRdsosMiZCNoTjW3Sj8pVpCDhexROKwJSEZV2grnXEB-4jn-PYJlFWeoziTfqNqmErHIQ_d3IJMrAtHg2qJ7W1cc9y4iJZSY0TXmWzp2QTZ1exYmdxIYgTSwyI0D=w1920-h1080"
+randomimages[55] = "https://lh3.googleusercontent.com/pw/AP1GczN2yiwSA8AabhXZPthTq8142Zt4KlMDSobkPv-Piiai2i6lFNEAmTrhG9Po6NPrw1JBrbGEXlXd5Ww2KzzZ4QFzGpvrh2J8ZUyOPY0GUFpiA139GikE2P-n74Mbq8AyicnXiJWlDBtft8P9DC3kPW6h=w1920-h1080"
+randomimages[56] = "https://lh3.googleusercontent.com/pw/AP1GczNO4Cb1S6XnAtznNxfjvbhqKaBbiX3Z7FaRrTySLKe0zsm3hcyOJqKWlYCAh4o6Wnmg0wDDXSIUiQSw26attM_dZrr-RLm5arxxS6QVXNbi8tr62UODCuxV2N9CAH0EYVAUyfR3XuuW1jeRhGcyDb5i=w1920-h1080"
+randomimages[57] = "https://lh3.googleusercontent.com/pw/AP1GczP8W7mK0Sb7Ux0NM1K-UNBoDjcOqg4qrRcwvs--hUA8po7Wjn9IUTHDEfh906V8OwiPwKW4Pzra3bunEql4Grs32fi5XZcprxx9F_LdQpkMHz7DijL4sK0F3ir35q_ExD9oUTMUiWNsbYqsSLO92KuZ=w1920-h1080"
+randomimages[58] = "https://lh3.googleusercontent.com/pw/AP1GczMHFZSH8x4C7nm0Q1HIRqbaac0QB7RzmwMl61_HsjCQQDMbcht2o0HkEQYgcyl8ODax_6R3dtEFqsgjBFNsG2zY6MKN8ZptW7Pa9Qa7YMTYGmzBwWRmtrOYVXTqMpLcZsH4oXd9VbqC8LmLzEJW9O2B=w1920-h1080"
+randomimages[59] = "https://lh3.googleusercontent.com/pw/AP1GczM8s2_OJJ9zIV2Au3fnQzlGJ8FujDL-doHaexNxB-6OOvseHLvNjEg798tnSq83SpCaHFQJcaL3MNr75O3D4iG1UryY9rZuJOac2-9V1r02v9_UxGaSo8hbUmIDu-Jmq7pPC4-LX9u830ETMrJzgGvR=w1920-h1080"
+randomimages[60] = "https://lh3.googleusercontent.com/pw/AP1GczMYj2O9DUT8TXAkkF03FO69H_Ggt_KVOx-QT4sd1xaFaZgz0qdupy1Nwii7sSoqoYHaSn8ZnwGrd1Bjlt33cgp7I8Ogr7HtMYD9o8xge2cankpXeJli1l0V8VT7JlmDjxl8h9n-Khf9knXlqXqJh5m5=w1920-h1080"
+randomimages[61] = "https://lh3.googleusercontent.com/pw/AP1GczMp9iyC3_1A0jcyzUofvxCLdZF-sRYAoIuPiTIp3KNEQVLfVJNWXCd41ZivvMpxUzgzJPGvsy3IHzf_b6SbJTIPc6NEcg4ibZmPQfWz0rlR81_JCXR98Mr4V7jCoQT3PLLO5tEyZXNTqziBZDCo0fDf=w1920-h1080"
+randomimages[62] = "https://lh3.googleusercontent.com/pw/AP1GczMVbo_ggvW3PRA37TvwknWV27Yp12nJH16Sv-UkAnjZ2_xmseTjiWcIYGM2lV-lO2OtlJQWKbqJw5vFez2rzo0YFy4jHxDEMVAUgl1z4inVYgV7wljzQjDKe8gdXryT6a3xHBQnVJtGgqDNB6DuF8zI=w1920-h1080"
+randomimages[63] = "https://lh3.googleusercontent.com/pw/AP1GczN-SB6ZKJpWhsLP6eMhvEI5nSg3d0lI9eh4aFauAakmhrfInpSne343CjtC4UfyhGeyqDiWz5y4q6Ovp_969HNzVrM_GfV47SouWLzO71dLmyPB0iA7Pjo9p5ZKsTfnaMxrGUVjoRqWUcIjIP6bQ7sT=w1920-h1080"
+randomimages[64] = "https://lh3.googleusercontent.com/pw/AP1GczOL8vPl0IaPXLPoGj2yRmn6ZR0BqcJzAu86E65DVGK-fBg6DOUHjoNZvTBzDIlE-38PoHlAs9zJeXVostha2XvqOTJMB2OHAsB71woBzxP8dbZPtGNW_EeclehZTlMyaBOO3ETnW-NR4btgOOjHTmTY=w1920-h1080"
+randomimages[65] = "https://lh3.googleusercontent.com/pw/AP1GczOOmqx0ZZhGv9gypeq457Pct_nsMc8jGWzXQYRY8XwmbHVPBLZfj_uTGkdkRjtq0ludsJfuF-msdD0aRoCwl32DKH5ooEBwraSqUdJNUtHzf9jI-52KBBCR0YitgG4UlZ4rxDAw0KwQn2Fwcqyyl2-A=w1920-h1080"
+randomimages[66] = "https://lh3.googleusercontent.com/pw/AP1GczODiOw4rRrTb0OPtlwy4mMn-QrE2-wNKHJPlOw1UsmWAspzlpQEkWAy65DWj7DMf9dSM89j1iznAvcmYiIJE5Ls0lN_mcKxkepfVpyVyo0HmxDm8BfIRgVnoCBx0lXb58khiOP7Oq9uLaJg_HBSIz0h=w1920-h1080"
+randomimages[67] = "https://lh3.googleusercontent.com/pw/AP1GczOE12lKcONc9KC3U56W0MPPW0QFFLX4DHqrcca8dEBUpGsZi9qL0Gphq-MefPkezSpGpcn0dDz2KHqQXJMGGy8n4WhuwJGQVxDlBCbxPTvoyV6GF2EuuzRz6rffSYAo79O3z2IpEsaxuY5MkVNPLWrz=w1920-h1080"
+randomimages[68] = "https://lh3.googleusercontent.com/pw/AP1GczOdBhXGog_DK58ApVe1_LDz5177u4Uz3xPE4k3TG9Hig4Vd_v1mhwbhZ9U34OpJnzFXphUoFn6gNd_vDMYeeoTAZov2QNje6SFN21XLp3Ng2bqdSlbuvVjIX44FNgPZB6mT3JEzVUAmR5HZ3CyOjZiX=w1920-h1080"
+randomimages[69] = "https://lh3.googleusercontent.com/pw/AP1GczMnuLlbYIrLtcJgJBcL_S3VsBUhfh6eT9LLwTbKhoIvFahb89mGkLsdmpqG726XtVHXjRb694mKEfbdAoRMgd2Saagh_pDxuSTZZA6xSqrGw3k0l7iaKa9k-nWGuc1fD3Hz_8j2LHm70Lep-WbPIyTT=w1920-h1080"
+randomimages[70] = "https://lh3.googleusercontent.com/pw/AP1GczP8FDULBe2n1iuX58Pwjo6M2Msxs9Vkmt4Z22Zz6pwRcusKM02o9ZdLLijBY0yd7MdXZ_e4e3HQwA1F2CSbpXrCJb03S2m_Fwc8XMyG5N1cx0X7weGxSdL7eAb7GYXgY_2NSzJJfZlhuwtgz9cqXn9i=w1920-h1080"
+randomimages[71] = "https://lh3.googleusercontent.com/pw/AP1GczNOg8LVUf5r1C30IegPWCjWDwgs5sborzQQitgQAGN9iguEroFlWrdjdiOrvRV6tPBWdxQiALmDY1iYHgW3ytIgYngMuNEutZnJrDEWtaslxo_2bPEC9XAAlJvdLqsAD-t1uFEAKksKSgJgvDvohvzu=w1920-h1080"
+randomimages[72] = "https://lh3.googleusercontent.com/pw/AP1GczPPJBDfzhDJJJc_9aUhbzQG7QWiTJN1NS5EyNYd9rBGggWaieXYHkrAq7-RpxINeUc7yi3B_GAzHcSbZNlxVJyCY_f2gS2PXOowGnv2JcAUqUy1WLdy92CBgDqdFuSp9YGaZZXOSj6yNeUq07YQ8EfO=w1920-h1080"
+randomimages[73] = "https://lh3.googleusercontent.com/pw/AP1GczNFK0aPfgvqjdVyNaVimphT3st1gho3CZpgjhTyK9FeiEw-P5Zr1Xaga4XEKB59n-nTrTO94laTH5_8TjEIk7i_rKVqzUMlvtFocEdOen8NtFkE6FeaNUYkLnjm6-HPhl_Hw3Ct-XvopXV49XZHSbM_=w1920-h1080"
+randomimages[74] = "https://lh3.googleusercontent.com/pw/AP1GczM9RpQRvChimtEG4D80jwyzZaZ4VjWuAgZqEG_NBxOv8ZIKZeKLpDEaT0OBf9OChHtYUr6Bvwid8TvrdzZbH8FPaZqt6D69FxgF7raSWw47oIvuo4Gdz1zGiWzDiCsKZZ4U7dreU9p9vSrzCm97RdLt=w1920-h1080"
+randomimages[75] = "https://lh3.googleusercontent.com/pw/AP1GczMTkPBI7uUSAy0mRVhffdf13dPuai_0-8nbSQqqIysGja6ENnLeFxCDAZ4s6i4ONjAWbl6CPKXl0I3Am0rQqnFeoGtacNT3FlILH6UkvMHyKyX8R766oF8z0AU3bC2t0sQ1A9woVycUr2u0l0WjYxQ8=w1920-h1080"
+
+var initialImageIndex = Math.floor(Math.random() * randomimages.length);
+document.getElementById('image1').src = randomimages[initialImageIndex];
+document.getElementById('image1').classList.add('active');
+curindex = initialImageIndex;
+
+function rotateimage() {
+  var oldImageElement = document.getElementById(currentActiveImageId);
+  var newImageId = (currentActiveImageId === 'image1') ? 'image2' : 'image1';
+  var newImageElement = document.getElementById(newImageId);
+
+  var tempindex = Math.floor(Math.random() * randomimages.length);
+
+  if (curindex === tempindex) {
+    curindex = (curindex + 1) % randomimages.length;
+  } else {
+    curindex = tempindex;
+  }
+
+  newImageElement.src = randomimages[curindex];
+
+  newImageElement.onload = function() {
+    oldImageElement.classList.remove('active');
+    newImageElement.classList.add('active');
+
+    currentActiveImageId = newImageId;
+  };
+  
+  newImageElement.onerror = function() {
+    console.error("Failed to load image: " + randomimages[curindex]);
+  };
+}
+
+var rotationInterval = setInterval(rotateimage, delay);
+
+setTimeout(function() {
+  clearInterval(rotationInterval);
+  console.log("Image rotation stopped after " + stopAfter / 1000 + " seconds.");
+}, stopAfter);

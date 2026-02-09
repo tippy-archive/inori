@@ -1,0 +1,21 @@
+2026.02.03
+[ht]	css, js 파일 위치 _css, _js로 변경 (href="../css/ → href="../_css/(5개), src="../js/ → src="../_js/(2개) 로 변경)
+[ht]	<script src="img.js"></script><script src="../_js/gototop.js"></script> 단순 순서 변경
+[js]	data.js, data.json 파일 이름 통합 및 _data.js, _data.json 으로 변경, 값 고정
+[js]	hover-clicked.js 통합으로 삭제(_js)
+[sh]	[] json 양식 제작
+[sh]	회차별 시트 기존처럼 유지
+
+2026.02.04
+[cs]	video-page-tablet .main-playlist min-height 값 조정
+[cs]	video-page-tablet gototop height 속성 변경
+[js]	gototop.js memu-page에서는 항상 height 400px 이상시 작동
+	video-page에서도 동일하게 height 400px 이상시 작동
+	video-page width 480px-1580px 구간에서는 span 클릭시 기존 기능 유지하면서 동일하게 작동
+
+2026.02.08
+[ht] _js/header-img.js, _js/side-img.js 위치이동, 이름변경
+
+ - 장기 프로젝트 -
+[ht]	메인 화면 검색기능 추가
+[ht]	하위 서버 데이터베이스 적용 테스트 (inori 서버)

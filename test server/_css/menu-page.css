@@ -1,0 +1,97 @@
+.header {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.header-title {
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 0 0 20px black;
+}
+
+.navbar {
+    top: -1px;
+    overflow: hidden;
+    position: sticky;
+    background-color: #D3ABFB;
+    background-image: linear-gradient(62deg, #D3ABFB 20%, #75B8FB 100%);
+}
+
+.navbar-title {
+    float: left;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+}
+
+.google-login {
+    float: right;
+}
+
+.google-login img {
+    width: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.image-container {
+    width: 300px;
+    height: calc(300px * 0.5625);
+    margin: 0 0 10px 0;
+    z-index: 0;
+}
+
+.fade-img {
+    width: 300px;
+    height: calc(300px * 0.5625);
+  }
+
+.main-middle {
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    background-color: #D3ABFB;
+    background-image: linear-gradient(62deg, #D3ABFB 10%, #75B8FB 105%);
+    border-radius: 8px;
+}
+
+.main-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.main-list a {
+    text-decoration: none;
+}
+
+.main-list :hover {
+    background-color: #DBBBFB;
+    border-radius: 8px;
+}
+
+.list-img img {
+    align-content: center;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.list-title {
+    width: auto;
+    color: #000000;
+    text-align: center;
+    align-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+footer {
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #D3ABFB;
+    background-image: linear-gradient(62deg, #D3ABFB 20%, #75B8FB 100%);
+}
