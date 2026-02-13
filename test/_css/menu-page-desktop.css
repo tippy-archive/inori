@@ -13,13 +13,12 @@
     }
 
     .header {
-        background-size: cover;
-        background-position: 50% -35vh;
+        background-position: 50% -6vh;
     }
 
     .header-title {
         font-size: 40px;
-        padding: 35vh 0;
+        padding: 26vh 0;
     }
 
     .navbar {
@@ -126,6 +125,14 @@
 
 @media (min-width: 1920px) {
 
+    .header {
+        background-position: 50% -10vh;
+    }
+
+    .header-title {
+        padding: 30vh 0;
+    }
+
     .list-select {
         width: calc((100vw - 380px) / 5);
     }
@@ -139,6 +146,14 @@
 }
 
 @media (min-width: 2560px) {
+
+    .header {
+        background-position: 50% -14vh;
+    }
+
+    .header-title {
+        padding: 34vh 0;
+    }
 
     .list-select {
         width: calc((100vw - 380px) / 6);

@@ -12,11 +12,6 @@
         border-radius: 10px;
     }
 
-    .header {
-        background-size: 100vw auto;
-        background-position: 50% 0;
-    }
-
     .header-title {
         font-size: 30px;
         padding: calc((56.25vw - 38px) / 2) 0;
@@ -110,7 +105,7 @@
 
     .navbar {
         height: 49px;
-        padding: 0 50px;
+        padding: 0 80px;
     }
 
     .navbar-title {

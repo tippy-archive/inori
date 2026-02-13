@@ -19,8 +19,8 @@ async function loadContentByFilename() {
                   data-subtitle="${item.s}" 
                   data-iframe-url="${item.v}">
                 <ul class="playlist-main">
-                    <li class="playlist-img"><img src="${item.i}"/></li>
-                    <li class="playlist-title">${item.l }</li>
+                    <li class="playlist-img"><img src="${item.i}" loading="lazy"/></li>
+                    <li class="playlist-title">${item.l}</li>
                 </ul>
             </span>
         `).join('');
