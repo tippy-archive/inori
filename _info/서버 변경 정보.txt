@@ -38,6 +38,10 @@ min-height: calc(98vw * 0.5625);
 [cs]	memu-page .header 수정, memu-page-mobile, tablet, desktop .header 정보 수정
 [js]	vanilla-parallax.js 추가 (stellar.js 대응)
 
+2026.02.14
+[cs]	memu-page-mobile, tablet, desktop #gototop 크기 변경
+
+
  - 장기 프로젝트 -
 [ht]	메인 화면 검색기능 추가
 [ht]	하위 서버 데이터베이스 적용 테스트 (inori 서버)
