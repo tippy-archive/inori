@@ -93,6 +93,11 @@
         margin: 10px 0;
     }
 
+    .main-list {
+        content-visibility: visible;
+        contain-intrinsic-size: none;
+    }
+
     .list-select {
         width: calc((100vw - 380px) / 4);
     }

@@ -63,6 +63,11 @@
         margin: 1vw 0;
     }
 
+    .main-list {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 500px;
+    }
+
     .list-select {
         width: calc(98vw / 3);
     }
