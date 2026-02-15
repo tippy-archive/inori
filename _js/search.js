@@ -27,6 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200);
     });
 
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            
+            const keyword = searchInput.value.trim();
+            
+            clearTimeout(debounceTimer);
+
+            autocompleteList.innerHTML = '';
+            autocompleteList.style.display = 'none';
+
+            executeSearch(keyword);
+
+            searchInput.blur(); 
+        }
+    });
+
 clearBtn.addEventListener('click', () => {
     searchInput.value = '';
     clearBtn.style.display = 'none';
