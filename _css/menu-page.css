@@ -48,7 +48,7 @@
 .fade-img {
     width: 300px;
     height: calc(300px * 0.5625);
-  }
+}
 
 .main-middle {
     color: #FFFFFF;
@@ -108,6 +108,7 @@ footer h5 {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -178,7 +179,7 @@ footer h5 {
     box-sizing: border-box;
 }
 
-.search-item-animated > a {
+.search-item-animated>a {
     display: flex;
     width: auto;
     height: auto;
@@ -186,7 +187,7 @@ footer h5 {
     color: inherit;
 }
 
-.search-item-animated > a:hover .playlist-main {
+.search-item-animated>a:hover .playlist-main {
     cursor: pointer;
 }
 
@@ -240,8 +241,8 @@ footer h5 {
     background: #fff;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .autocomplete-item {

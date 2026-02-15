@@ -103,13 +103,13 @@
     .search-input-wrapper {
         padding: 4px 10px;
     }
-	
+
     #searchInput {
         font-size: 12px;
     }
 
     #search-results {
-        min-height:  calc(100vh - ((100vw * 0.5625) + 1vw + 168px));
+        min-height: calc(100vh - ((100vw * 0.5625) + 1vw + 168px));
     }
 
     .search-item-animated {

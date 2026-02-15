@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            
+
             const keyword = searchInput.value.trim();
-            
+
             clearTimeout(debounceTimer);
 
             autocompleteList.innerHTML = '';
@@ -40,58 +40,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
             executeSearch(keyword);
 
-            searchInput.blur(); 
+            searchInput.blur();
         }
     });
 
-clearBtn.addEventListener('click', () => {
-    searchInput.value = '';
-    clearBtn.style.display = 'none';
-    resetSearch();
-    searchInput.focus();
-});
-
-function executeSearch(keyword) {
-    if (!keyword) return;
-
-    mainContent.style.display = 'none';
-    searchResults.style.display = 'block';
-
-    const k = keyword.toLowerCase();
-
-    const filtered = window.globalData.filter(item => {
-        const tags = Array.isArray(item.g) 
-            ? item.g.filter(tag => tag !== "null").join(' ').toLowerCase() 
-            : "";
-
-        return (
-            (item.s && item.s.toLowerCase().includes(k)) || 
-            (item.m && item.m.toLowerCase().includes(k)) || 
-            (item.u && item.u.toLowerCase().includes(k)) ||
-            (tags.includes(k))
-        );
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.style.display = 'none';
+        resetSearch();
+        searchInput.focus();
     });
 
-    renderWithAnimation(filtered);
-}
+    function executeSearch(keyword) {
+        if (!keyword) return;
 
-function showAutocomplete(keyword) {
-    const k = keyword.toLowerCase();
-    
-    const matches = window.globalData
-        .filter(item => {
-            const tags = Array.isArray(item.g) 
-                ? item.g.filter(tag => tag !== "null").join(' ').toLowerCase() 
-                : "";
+        mainContent.style.display = 'none';
+        searchResults.style.display = 'block';
+
+        const k = keyword.toLowerCase();
+
+        const filtered = window.globalData.filter(item => {
+            const tags = Array.isArray(item.g) ?
+                item.g.filter(tag => tag !== "null").join(' ').toLowerCase() :
+                "";
 
             return (
-                (item.s && item.s.toLowerCase().includes(k)) || 
-                (item.m && item.m.toLowerCase().includes(k)) || 
-                (tags.includes(k)) ||
-                (item.u && item.u.toLowerCase().includes(k))
+                (item.s && item.s.toLowerCase().includes(k)) ||
+                (item.m && item.m.toLowerCase().includes(k)) ||
+                (item.u && item.u.toLowerCase().includes(k)) ||
+                (tags.includes(k))
             );
-        })
-        .slice(0, AUTOCOMPLETE_LIMIT);
+        });
+
+        renderWithAnimation(filtered);
+    }
+
+    function showAutocomplete(keyword) {
+        const k = keyword.toLowerCase();
+
+        const matches = window.globalData
+            .filter(item => {
+                const tags = Array.isArray(item.g) ?
+                    item.g.filter(tag => tag !== "null").join(' ').toLowerCase() :
+                    "";
+
+                return (
+                    (item.s && item.s.toLowerCase().includes(k)) ||
+                    (item.m && item.m.toLowerCase().includes(k)) ||
+                    (tags.includes(k)) ||
+                    (item.u && item.u.toLowerCase().includes(k))
+                );
+            })
+            .slice(0, AUTOCOMPLETE_LIMIT);
 
         if (matches.length === 0) {
             autocompleteList.innerHTML = '';
@@ -122,46 +122,46 @@ function showAutocomplete(keyword) {
         });
     }
 
-function renderWithAnimation(data) {
-    searchResults.innerHTML = '';
+    function renderWithAnimation(data) {
+        searchResults.innerHTML = '';
 
-    if (data.length === 0) {
-        const noResultMsg = document.createElement('p');
-        noResultMsg.className = 'no-result';
-        noResultMsg.textContent = '검색 결과가 없습니다.';
-        searchResults.appendChild(noResultMsg);
-        return;
-    }
+        if (data.length === 0) {
+            const noResultMsg = document.createElement('p');
+            noResultMsg.className = 'no-result';
+            noResultMsg.textContent = '검색 결과가 없습니다.';
+            searchResults.appendChild(noResultMsg);
+            return;
+        }
 
-    data.forEach((item, index) => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'search-item-animated';
+        data.forEach((item, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'search-item-animated';
 
-        wrapper.innerHTML = `
+            wrapper.innerHTML = `
             <a href="${item.u}">
                 <ul class="list-select playlist-main">
                     <li class="list-img"><img src="${item.i}"/></li>
                     <li class="list-title"><p>${item.t}</p></li>
                 </ul>
             </a>`;
-        searchResults.appendChild(wrapper);
-    });
-}
+            searchResults.appendChild(wrapper);
+        });
+    }
 
-function resetSearch() {
-    if (mainContent) mainContent.style.display = 'block';
-    
-    if (searchResults) {
-        searchResults.style.display = 'none';
-        
-        searchResults.innerHTML = ''; 
+    function resetSearch() {
+        if (mainContent) mainContent.style.display = 'block';
+
+        if (searchResults) {
+            searchResults.style.display = 'none';
+
+            searchResults.innerHTML = '';
+        }
+
+        if (autocompleteList) {
+            autocompleteList.innerHTML = '';
+            autocompleteList.style.display = 'none';
+        }
     }
-    
-    if (autocompleteList) {
-        autocompleteList.innerHTML = '';
-        autocompleteList.style.display = 'none';
-    }
-}
 
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.search-box')) {

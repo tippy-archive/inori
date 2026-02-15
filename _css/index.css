@@ -16,7 +16,8 @@ body {
     /* Standard syntax */
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -53,11 +54,11 @@ img {
     height: 100%;
     opacity: 0;
     transition: opacity 1.4s ease-in-out;
-  }
+}
 
 .fade-img.active {
     opacity: 1;
-  }
+}
 
 #gototop {
     display: none;

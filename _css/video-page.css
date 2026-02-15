@@ -1,8 +1,8 @@
- body::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
- }
- 
- body::-webkit-scrollbar-thumb {
+}
+
+body::-webkit-scrollbar-thumb {
     display: none;
     background-color: #A0A0A0;
     background-clip: padding-box;
@@ -67,10 +67,10 @@
     border-radius: 8px;
 }
 
- .main-playlist::-webkit-scrollbar {
+.main-playlist::-webkit-scrollbar {
     display: none;
- }
- 
+}
+
 .main-playlist::-webkit-scrollbar-thumb {
     display: none;
     background-color: #A0A0A0;
