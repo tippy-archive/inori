@@ -115,7 +115,6 @@ footer h5 {
 }
 
 .search-container {
-    padding: 40px 20px;
     display: flex;
     justify-content: center;
     background-color: transparent;
@@ -134,7 +133,6 @@ footer h5 {
     background: #ffffff;
     border: 2px solid #e1e8ed;
     border-radius: 30px;
-    padding: 8px 20px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -156,7 +154,6 @@ footer h5 {
     flex: 1;
     border: none;
     outline: none;
-    font-size: 16px;
     font-weight: 500;
     color: #2d3748;
     background: transparent;
@@ -172,7 +169,7 @@ footer h5 {
     flex-direction: row !important;
     flex-wrap: wrap;
     justify-content: flex-start;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .search-item-animated {

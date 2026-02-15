@@ -34,31 +34,47 @@ clearBtn.addEventListener('click', () => {
     searchInput.focus();
 });
 
-    function executeSearch(keyword) {
-        if (!keyword) return;
+function executeSearch(keyword) {
+    if (!keyword) return;
 
-        mainContent.style.display = 'none';
-        searchResults.style.display = 'block';
+    mainContent.style.display = 'none';
+    searchResults.style.display = 'block';
 
-        const filtered = window.globalData.filter(item => {
-            const k = keyword.toLowerCase();
+    const k = keyword.toLowerCase();
+
+    const filtered = window.globalData.filter(item => {
+        const tags = Array.isArray(item.g) 
+            ? item.g.filter(tag => tag !== "null").join(' ').toLowerCase() 
+            : "";
+
+        return (
+            (item.s && item.s.toLowerCase().includes(k)) || 
+            (item.m && item.m.toLowerCase().includes(k)) || 
+            (item.u && item.u.toLowerCase().includes(k)) ||
+            (tags.includes(k))
+        );
+    });
+
+    renderWithAnimation(filtered);
+}
+
+function showAutocomplete(keyword) {
+    const k = keyword.toLowerCase();
+    
+    const matches = window.globalData
+        .filter(item => {
+            const tags = Array.isArray(item.g) 
+                ? item.g.filter(tag => tag !== "null").join(' ').toLowerCase() 
+                : "";
+
             return (
-                item.t.toLowerCase().includes(k) || 
-                (item.m && item.m.toLowerCase().includes(k))
+                (item.s && item.s.toLowerCase().includes(k)) || 
+                (item.m && item.m.toLowerCase().includes(k)) || 
+                (tags.includes(k)) ||
+                (item.u && item.u.toLowerCase().includes(k))
             );
-        });
-
-        renderWithAnimation(filtered);
-    }
-
-    function showAutocomplete(keyword) {
-        const k = keyword.toLowerCase();
-        const matches = window.globalData
-            .filter(item => 
-                item.t.toLowerCase().includes(k) || 
-                (item.m && item.m.toLowerCase().includes(k))
-            )
-            .slice(0, AUTOCOMPLETE_LIMIT);
+        })
+        .slice(0, AUTOCOMPLETE_LIMIT);
 
         if (matches.length === 0) {
             autocompleteList.innerHTML = '';
@@ -68,7 +84,7 @@ clearBtn.addEventListener('click', () => {
 
         autocompleteList.style.display = 'block';
         autocompleteList.innerHTML = matches.map(item => `
-            <div class="autocomplete-item" data-title="${item.t}">${item.t}</div>
+            <div class="autocomplete-item" data-title="${item.s}">${item.s}</div>
         `).join('');
 
         document.querySelectorAll('.autocomplete-item').forEach(item => {

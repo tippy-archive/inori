@@ -96,4 +96,28 @@
         font-size: 12px;
     }
 
+    .search-container {
+        padding: 20px;
+    }
+
+    .search-input-wrapper {
+        padding: 4px 10px;
+    }
+	
+    #searchInput {
+        font-size: 12px;
+    }
+
+    #search-results {
+        min-height:  calc(100vh - ((100vw * 0.5625) + 1vw + 168px));
+    }
+
+    .search-item-animated {
+        max-height: calc((((98vw - 12px) / 3) * 1.5) + 54px);
+    }
+
+    .autocomplete-item {
+        font-size: 10px;
+    }
+
 }
