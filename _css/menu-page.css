@@ -165,7 +165,7 @@ footer h5 {
 }
 
 #search-results {
-    display: flex !important;
+    display: flex;
     flex-direction: row !important;
     flex-wrap: wrap;
     justify-content: flex-start;
