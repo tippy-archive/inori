@@ -116,6 +116,10 @@
         max-height: calc((((98vw - 12px) / 3) * 1.5) + 54px);
     }
 
+    .no-result {
+        padding: 50px 0 0 0;
+    }
+
     .autocomplete-item {
         font-size: 10px;
     }

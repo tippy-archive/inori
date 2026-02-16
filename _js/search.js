@@ -65,9 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 "";
 
             return (
+                (item.t && item.t.toLowerCase().includes(k)) ||
                 (item.s && item.s.toLowerCase().includes(k)) ||
                 (item.m && item.m.toLowerCase().includes(k)) ||
-                (item.u && item.u.toLowerCase().includes(k)) ||
+                (item.g && item.g.toLowerCase().includes(k)) ||
                 (tags.includes(k))
             );
         });
@@ -85,10 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     "";
 
                 return (
+                    (item.t && item.t.toLowerCase().includes(k)) ||
                     (item.s && item.s.toLowerCase().includes(k)) ||
                     (item.m && item.m.toLowerCase().includes(k)) ||
-                    (tags.includes(k)) ||
-                    (item.u && item.u.toLowerCase().includes(k))
+                    (item.g && item.g.toLowerCase().includes(k)) ||
+                    (tags.includes(k))
                 );
             })
             .slice(0, AUTOCOMPLETE_LIMIT);

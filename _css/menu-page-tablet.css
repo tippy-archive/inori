@@ -112,7 +112,7 @@
     }
 
     #search-results {
-        min-height: calc(100vh - ((100vw * 0.5625) + 274px));
+        min-height: calc(100vh - ((100vw * 0.5625) + 277px));
     }
 
     .search-item-animated {
@@ -164,6 +164,10 @@
     footer {
         font-size: 20px;
         padding: 12px 0px;
+    }
+
+    #search-results {
+        min-height: calc(100vh - ((100vw * 0.5625) + 284px));
     }
 
 }

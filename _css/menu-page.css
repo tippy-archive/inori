@@ -202,7 +202,6 @@ footer h5 {
 .no-result {
     width: 100%;
     text-align: center;
-    padding: 100px 0;
     color: #888;
     pointer-events: none;
 }
