@@ -1,174 +1,180 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const clearBtn = document.getElementById('clearBtn');
-    const autocompleteList = document.getElementById('autocomplete-list');
-    const mainContent = document.getElementById('main-content');
-    const searchResults = document.getElementById('search-results');
+	const searchInput = document.getElementById('searchInput');
+	const clearBtn = document.getElementById('clearBtn');
+	const autocompleteList = document.getElementById('autocomplete-list');
+	const mainContent = document.getElementById('main-content');
+	const searchResults = document.getElementById('search-results');
 
-    let debounceTimer;
-    const AUTOCOMPLETE_LIMIT = 5;
+	let debounceTimer;
+	const AUTOCOMPLETE_LIMIT = 5;
 
-    searchInput.addEventListener('input', (e) => {
-        const keyword = e.target.value.trim().toLowerCase();
+	searchInput.addEventListener('input', (e) => {
+		const keyword = e.target.value.trim().toLowerCase();
 
-        clearBtn.style.display = keyword.length > 0 ? 'flex' : 'none';
+		clearBtn.style.display = keyword.length > 0 ? 'flex' : 'none';
 
-        if (keyword === "") {
-            clearTimeout(debounceTimer);
-            resetSearch();
-            return;
-        }
+		if (keyword === "") {
+			clearTimeout(debounceTimer);
+			resetSearch();
+			return;
+		}
 
-        showAutocomplete(keyword);
+		showAutocomplete(keyword);
 
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(() => {
-            executeSearch(keyword);
-        }, 200);
-    });
+		clearTimeout(debounceTimer);
+		debounceTimer = setTimeout(() => {
+			executeSearch(keyword);
+		}, 200);
+	});
 
-    searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
+	searchInput.addEventListener('keydown', (e) => {
+		if (e.key === 'Enter') {
+			e.preventDefault();
 
-            const keyword = searchInput.value.trim();
+			const keyword = searchInput.value.trim();
 
-            clearTimeout(debounceTimer);
+			clearTimeout(debounceTimer);
 
-            autocompleteList.innerHTML = '';
-            autocompleteList.style.display = 'none';
+			autocompleteList.innerHTML = '';
+			autocompleteList.style.display = 'none';
 
-            executeSearch(keyword);
+			executeSearch(keyword);
 
-            searchInput.blur();
-        }
-    });
+			searchInput.blur();
+		}
+	});
 
-    clearBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        clearBtn.style.display = 'none';
-        resetSearch();
-        searchInput.focus();
-    });
+	clearBtn.addEventListener('click', () => {
+		searchInput.value = '';
+		clearBtn.style.display = 'none';
+		resetSearch();
+		searchInput.focus();
+	});
 
-    function executeSearch(keyword) {
-        if (!keyword) return;
+	function executeSearch(keyword) {
+		if (!keyword) return;
 
-        mainContent.style.display = 'none';
-        searchResults.style.display = 'block';
+		mainContent.style.display = 'none';
+		searchResults.style.display = 'block';
 
-        const k = keyword.toLowerCase();
+		const k = keyword.toLowerCase();
 
-        const filtered = window.globalData.filter(item => {
-            const tags = Array.isArray(item.g) ?
-                item.g.filter(tag => tag !== "null").join(' ').toLowerCase() :
-                "";
+		const filtered = window.globalData.filter(item => {
+			let gString = "";
+			if (Array.isArray(item.g)) {
+				gString = item.g.filter(tag => tag !== "null").join(' ');
+			} else if (item.g && item.g !== "null") {
+				gString = item.g;
+			}
 
-            return (
-                (item.t && item.t.toLowerCase().includes(k)) ||
-                (item.s && item.s.toLowerCase().includes(k)) ||
-                (item.m && item.m.toLowerCase().includes(k)) ||
-                (item.g && item.g.toLowerCase().includes(k)) ||
-                (tags.includes(k))
-            );
-        });
+			const finalG = gString.toLowerCase();
 
-        renderWithAnimation(filtered);
-    }
+			return (
+				(item.s && item.s.toLowerCase().includes(k)) ||
+				(item.m && item.m.toLowerCase().includes(k)) ||
+				(finalG.includes(k))
+			);
+		});
 
-    function showAutocomplete(keyword) {
-        const k = keyword.toLowerCase();
+		renderWithAnimation(filtered);
+	}
 
-        const matches = window.globalData
-            .filter(item => {
-                const tags = Array.isArray(item.g) ?
-                    item.g.filter(tag => tag !== "null").join(' ').toLowerCase() :
-                    "";
+	function showAutocomplete(keyword) {
+		const k = keyword.toLowerCase();
 
-                return (
-                    (item.t && item.t.toLowerCase().includes(k)) ||
-                    (item.s && item.s.toLowerCase().includes(k)) ||
-                    (item.m && item.m.toLowerCase().includes(k)) ||
-                    (item.g && item.g.toLowerCase().includes(k)) ||
-                    (tags.includes(k))
-                );
-            })
-            .slice(0, AUTOCOMPLETE_LIMIT);
+		const matches = window.globalData
+			.filter(item => {
+				let gString = "";
+				if (Array.isArray(item.g)) {
+					gString = item.g.filter(tag => tag !== "null").join(' ');
+				} else if (item.g && item.g !== "null") {
+					gString = item.g;
+				}
 
-        if (matches.length === 0) {
-            autocompleteList.innerHTML = '';
-            autocompleteList.style.display = 'none';
-            return;
-        }
+				const finalG = gString.toLowerCase();
 
-        autocompleteList.style.display = 'block';
-        autocompleteList.innerHTML = matches.map(item => `
+				return (
+					(item.s && item.s.toLowerCase().includes(k)) ||
+					(item.m && item.m.toLowerCase().includes(k)) ||
+					(finalG.includes(k))
+				);
+			})
+			.slice(0, AUTOCOMPLETE_LIMIT);
+
+		if (matches.length === 0) {
+			autocompleteList.innerHTML = '';
+			autocompleteList.style.display = 'none';
+			return;
+		}
+
+		autocompleteList.style.display = 'block';
+		autocompleteList.innerHTML = matches.map(item => `
             <div class="autocomplete-item" data-title="${item.s}">${item.s}</div>
         `).join('');
 
-        document.querySelectorAll('.autocomplete-item').forEach(item => {
-            item.onclick = (e) => {
-                e.stopPropagation();
-                const selectedTitle = item.dataset.title;
+		document.querySelectorAll('.autocomplete-item').forEach(item => {
+			item.onclick = (e) => {
+				e.stopPropagation();
+				const selectedTitle = item.dataset.title;
 
-                searchInput.value = selectedTitle;
+				searchInput.value = selectedTitle;
 
-                autocompleteList.innerHTML = '';
-                autocompleteList.style.display = 'none';
+				autocompleteList.innerHTML = '';
+				autocompleteList.style.display = 'none';
 
-                clearBtn.style.display = 'flex';
+				clearBtn.style.display = 'flex';
 
-                clearTimeout(debounceTimer);
-                executeSearch(selectedTitle);
-            };
-        });
-    }
+				clearTimeout(debounceTimer);
+				executeSearch(selectedTitle);
+			};
+		});
+	}
 
-    function renderWithAnimation(data) {
-        searchResults.innerHTML = '';
+	function renderWithAnimation(data) {
+		searchResults.innerHTML = '';
 
-        if (data.length === 0) {
-            const noResultMsg = document.createElement('p');
-            noResultMsg.className = 'no-result';
-            noResultMsg.textContent = '검색 결과가 없습니다.';
-            searchResults.appendChild(noResultMsg);
-            return;
-        }
+		if (data.length === 0) {
+			const noResultMsg = document.createElement('p');
+			noResultMsg.className = 'no-result';
+			noResultMsg.textContent = '검색 결과가 없습니다.';
+			searchResults.appendChild(noResultMsg);
+			return;
+		}
 
-        data.forEach((item, index) => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'search-item-animated';
+		data.forEach((item, index) => {
+			const wrapper = document.createElement('div');
+			wrapper.className = 'search-item-animated';
 
-            wrapper.innerHTML = `
+			wrapper.innerHTML = `
             <a href="${item.u}">
                 <ul class="list-select playlist-main">
                     <li class="list-img"><img src="${item.i}"/></li>
                     <li class="list-title"><p>${item.t}</p></li>
                 </ul>
             </a>`;
-            searchResults.appendChild(wrapper);
-        });
-    }
+			searchResults.appendChild(wrapper);
+		});
+	}
 
-    function resetSearch() {
-        if (mainContent) mainContent.style.display = 'block';
+	function resetSearch() {
+		if (mainContent) mainContent.style.display = 'block';
 
-        if (searchResults) {
-            searchResults.style.display = 'none';
+		if (searchResults) {
+			searchResults.style.display = 'none';
 
-            searchResults.innerHTML = '';
-        }
+			searchResults.innerHTML = '';
+		}
 
-        if (autocompleteList) {
-            autocompleteList.innerHTML = '';
-            autocompleteList.style.display = 'none';
-        }
-    }
+		if (autocompleteList) {
+			autocompleteList.innerHTML = '';
+			autocompleteList.style.display = 'none';
+		}
+	}
 
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.search-box')) {
-            autocompleteList.innerHTML = '';
-            autocompleteList.style.display = 'none';
-        }
-    });
+	document.addEventListener('click', (e) => {
+		if (!e.target.closest('.search-box')) {
+			autocompleteList.innerHTML = '';
+			autocompleteList.style.display = 'none';
+		}
+	});
 });

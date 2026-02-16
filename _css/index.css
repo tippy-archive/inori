@@ -5,7 +5,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Quicksand', 'Noto Sans KR', 'Noto Sans JP', sans-serif;
+    font-family: "Quicksand", "Noto Sans KR", "Noto Sans JP", sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-user-select: none;
@@ -64,15 +64,15 @@ img {
     display: none;
     position: fixed;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #ffffff;
     border: none;
     outline: none;
-    background-color: #D3ABFB;
+    background-color: #d3abfb;
     cursor: pointer;
     border-radius: 8px;
 }
 
 #gototop:hover {
     color: #000000;
-    background-color: #E7D3FB;
+    background-color: #e7d3fb;
 }

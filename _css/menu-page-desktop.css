@@ -1,12 +1,11 @@
 @media (min-width: 1600px) {
-
     body::-webkit-scrollbar {
         display: block;
         width: 10px;
     }
 
     body::-webkit-scrollbar-thumb {
-        background-color: #A0A0A0;
+        background-color: #a0a0a0;
         background-clip: padding-box;
         border: 2px solid transparent;
         border-radius: 10px;
@@ -46,7 +45,7 @@
         display: block;
         width: 300px;
         padding: 25px;
-        background-color: #F0F0F0;
+        background-color: #f0f0f0;
         overflow: hidden;
         text-align: center;
         flex-direction: column;
@@ -71,7 +70,7 @@
 
     .row-side ul:hover {
         display: block;
-        background-color: #DBBBFB;
+        background-color: #dbbbfb;
         border-radius: 8px;
     }
 
@@ -137,11 +136,9 @@
     .autocomplete-item {
         font-size: 16px;
     }
-
 }
 
 @media (min-width: 1920px) {
-
     .header {
         background-position: 50% -10vh;
     }
@@ -159,11 +156,9 @@
         height: calc(((100vw - 420px) / 5) * 1.5);
         padding: 4px 4px 0 4px;
     }
-
 }
 
 @media (min-width: 2560px) {
-
     .header {
         background-position: 50% -14vh;
     }
@@ -181,11 +176,9 @@
         height: calc(((100vw - 428px) / 6) * 1.5);
         padding: 4px 4px 0 4px;
     }
-
 }
 
 @media (min-width: 3840px) {
-
     .list-select {
         width: calc((100vw - 380px) / 8);
     }

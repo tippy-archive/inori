@@ -1,5 +1,4 @@
 @media (min-width: 1580px) {
-
     body::-webkit-scrollbar {
         display: none;
     }
@@ -129,5 +128,4 @@
     #gototop {
         display: none;
     }
-
 }

@@ -1,5 +1,4 @@
 @media (min-width: 0px) {
-
     .navbar {
         height: 31px;
         padding: 0 2.5vw;
@@ -112,5 +111,4 @@
     #gototop {
         display: none;
     }
-
 }

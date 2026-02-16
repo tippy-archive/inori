@@ -1,5 +1,4 @@
 @media (min-width: 0px) {
-
     body::-webkit-scrollbar {
         display: none;
     }
@@ -123,5 +122,4 @@
     .autocomplete-item {
         font-size: 10px;
     }
-
 }
