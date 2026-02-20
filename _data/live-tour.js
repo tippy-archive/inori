@@ -1,7 +1,7 @@
 (function() {
     const currentScript = document.currentScript;
     const parentContainer = currentScript.parentElement;
-    const jsonUrl = '_data/archive.json';
+    const jsonUrl = '_data/live-tour.json';
 
     window.dataLoader = window.dataLoader.then(async () => {
         try {
