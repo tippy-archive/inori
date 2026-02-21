@@ -65,6 +65,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    content-visibility: auto;
     min-height: 200px;
 }
 
