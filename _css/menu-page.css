@@ -65,6 +65,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    min-height: 200px;
 }
 
 .main-list a {

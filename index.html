@@ -19,7 +19,6 @@
         <link rel="stylesheet" type="text/css" href="_css/menu-page-mobile.css" />
         <link rel="stylesheet" type="text/css" href="_css/menu-page-tablet.css" />
         <link rel="stylesheet" type="text/css" href="_css/menu-page-desktop.css" />
-        <script src="_js/data-loader.js"></script>
     </head>
     <body>
         <div class="header" data-speed="0.4">
@@ -58,16 +57,14 @@
                     </div>
                 </div>
                 <div id="main-content">
-                    <div class="section-item">
-                        <div class="main-middle"><p id="archive">미나세 이노리 아카이브</p></div>
-                        <div class="main-list"><script src="_data/archive.js" defer></script></div>
-                        <div class="main-middle"><p id="live-tour">미나세 이노리 라이브 투어</p></div>
-                        <div class="main-list"><script src="_data/live-tour.js" defer></script></div>
-                        <div class="main-middle"><p id="inorimachi">이노리마치 주민집회</p></div>
-                        <div class="main-list"><script src="_data/inorimachi.js" defer></script></div>
-                        <div class="main-middle"><p id="stream">미나세 이노리 라이브 선행 스트리밍</p></div>
-                        <div class="main-list"><script src="_data/stream.js" defer></script></div>
-                    </div>
+                    <div class="main-middle"><p id="archive">미나세 이노리 아카이브</p></div>
+                    <div class="main-list" data-json="_data/archive.json"></div>
+                    <div class="main-middle"><p id="live-tour">미나세 이노리 라이브 투어</p></div>
+                    <div class="main-list" data-json="_data/live-tour.json"></div>
+                    <div class="main-middle"><p id="inorimachi">이노리마치 주민집회</p></div>
+                    <div class="main-list" data-json="_data/inorimachi.json"></div>
+                    <div class="main-middle"><p id="stream">미나세 이노리 라이브 선행 스트리밍</p></div>
+                    <div class="main-list" data-json="_data/stream.json"></div>
                 </div>
                 <div id="search-results" class="main-list" style="display: none;"></div>
             </div>
@@ -75,6 +72,7 @@
         <footer>미나세 이노리 아카이브 <h5>ver. 260222</h5></footer>
         <button onclick="topFunction()" id="gototop">Top</button>
         <script src="_js/vanilla-parallax.js"></script>
+        <script src="_js/data-loader.js"></script>
         <script src="_js/search.js"></script>
         <script src="_js/gototop.js"></script>
     </body>
