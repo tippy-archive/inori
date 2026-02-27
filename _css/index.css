@@ -67,12 +67,12 @@ img {
     color: #ffffff;
     border: none;
     outline: none;
-    background-color: #d3abfb;
+    background-color: #6EC0FF;
     cursor: pointer;
     border-radius: 8px;
 }
 
 #gototop:hover {
     color: #000000;
-    background-color: #e7d3fb;
+    background-color: #A8D9FF;
 }

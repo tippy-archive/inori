@@ -14,8 +14,8 @@
     top: 0;
     overflow: hidden;
     position: sticky;
-    background-color: #d3abfb;
-    background-image: linear-gradient(62deg, #d3abfb 20%, #75b8fb 100%);
+    background-color: #6EC0FF;
+    background-image: linear-gradient(60deg, #6EC0FF 0%, #CBA2FF 100%);
     z-index: 10;
 }
 
@@ -54,8 +54,8 @@
     color: #ffffff;
     text-align: center;
     text-decoration: none;
-    background-color: #d3abfb;
-    background-image: linear-gradient(62deg, #d3abfb 10%, #75b8fb 105%);
+    background-color: #6EC0FF;
+    background-image: linear-gradient(60deg, #6EC0FF 0%, #CBA2FF 100%);
     border-radius: 8px;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .main-list :hover {
-    background-color: #dbbbfb;
+    background-color: #A8D9FF;
     border-radius: 8px;
 }
 
@@ -97,8 +97,8 @@
 footer {
     text-align: center;
     color: #ffffff;
-    background-color: #d3abfb;
-    background-image: linear-gradient(62deg, #d3abfb 20%, #75b8fb 100%);
+    background-color: #6EC0FF;
+    background-image: linear-gradient(60deg, #6EC0FF 0%, #CBA2FF 100%);
 }
 
 footer h5 {
