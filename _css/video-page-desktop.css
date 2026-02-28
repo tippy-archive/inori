@@ -25,7 +25,7 @@
     }
 
     .navbar a.main-title:hover {
-        text-shadow: 0 0 20px black;
+        text-shadow: 0 0 20px #ffffff;
     }
 
     .navbar a.next {
@@ -39,7 +39,7 @@
 
     .navbar a.year:hover {
         display: block;
-        text-shadow: 0 0 20px black;
+        text-shadow: 0 0 20px #ffffff;
     }
 
     .navbar a.sub-title {
@@ -48,7 +48,7 @@
 
     .navbar a.sub-title:hover {
         display: block;
-        text-shadow: 0 0 20px black;
+        text-shadow: 0 0 20px #ffffff;
     }
 
     .video-page {

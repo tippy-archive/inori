@@ -7,7 +7,7 @@
 .header-title {
     color: #ffffff;
     text-align: center;
-    text-shadow: 0 0 20px black;
+    text-shadow: 0 0 20px #ffffff;
 }
 
 .navbar {

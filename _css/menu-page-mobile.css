@@ -23,7 +23,7 @@
     }
 
     .navbar a.navbar-title:hover {
-        text-shadow: 0 0 10px black;
+        text-shadow: 0 0 10px #ffffff;
     }
 
     .google-login img {
