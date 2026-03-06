@@ -194,9 +194,9 @@
 
     .main-playlist {
         width: calc(100vw - 30px);
-        max-width: 1120px;
         height: auto;
-        min-height: 0;
+        max-width: 1120px;
+        min-height: calc(100vh - ((100vw - 30px) * 0.5625) - 159px);
     }
 
     .main-playlist::-webkit-scrollbar {
@@ -219,5 +219,12 @@
         width: auto;
         font-size: 20px;
         padding: 0 0 0 10px;
+    }
+}
+
+@media (min-width: 1150px) {
+
+    .main-playlist {
+        min-height: calc(100vh - 789px);
     }
 }
