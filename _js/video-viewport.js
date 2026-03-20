@@ -24,6 +24,7 @@ PlaylistContainer.addEventListener('click', (event) => {
         newIframe.id = 'google-iframe';
         newIframe.allowFullscreen = true;
         newIframe.setAttribute('allow', 'fullscreen');
+        newIframe.setAttribute('allowfullscreen', 'true');
 
         VideoMain.classList.add('video-main');
         VideoMain.appendChild(newIframe);
