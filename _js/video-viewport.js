@@ -6,18 +6,24 @@ window.addEventListener('load', () => {
 
     if (!VideoMain || !PlaylistContainer) return;
 
-    let myRotationInterval = window.rotationInterval;
-
+    let myRotationInterval = window.rotationInterval; 
     window.rotationInterval = null; 
 
     const defaultTitle = MainVideoTitle.innerHTML;
     const defaultSubtitle = MainVideoSubtitle.innerHTML;
-    let currentIframe;
+    let currentIframe = null;
     let activeSpan = null;
 
     PlaylistContainer.addEventListener('click', (event) => {
         const span = event.target.closest('span');
-        if (!span || !span.dataset.iframeUrl) return;
+        if (!span) return;
+
+        const playlistMain = span.querySelector('.playlist-main');
+
+        const dataSource = span.dataset.iframeUrl ? span : playlistMain;
+        if (!dataSource) return;
+
+        const { iframeUrl, title, subtitle } = dataSource.dataset;
 
         if (activeSpan === span) {
             if (currentIframe) {
@@ -31,7 +37,9 @@ window.addEventListener('load', () => {
 
             MainVideoTitle.innerHTML = defaultTitle;
             MainVideoSubtitle.innerHTML = defaultSubtitle;
-            span.classList.remove('is-active');
+            span.classList.remove('selected');
+            if (playlistMain) playlistMain.classList.remove('selected');
+            
             activeSpan = null;
             return;
         }
@@ -41,14 +49,14 @@ window.addEventListener('load', () => {
             myRotationInterval = null;
         }
 
-        const { iframeUrl, title, subtitle } = span.dataset;
+        if (activeSpan) {
+            activeSpan.classList.remove('selected');
+            const oldInner = activeSpan.querySelector('.playlist-main');
+            if (oldInner) oldInner.classList.remove('selected');
+        }
 
         if (currentIframe) {
             VideoMain.removeChild(currentIframe);
-        }
-
-        if (activeSpan) {
-            activeSpan.classList.remove('is-active');
         }
 
         if (iframeUrl) {
@@ -56,21 +64,17 @@ window.addEventListener('load', () => {
             newIframe.src = iframeUrl;
             newIframe.id = 'google-iframe';
             newIframe.allowFullscreen = true;
+            VideoMain.appendChild(newIframe);
             VideoMain.classList.add('video-main');
             VideoMain.appendChild(newIframe);
-            currentIframe = newIframe;
-        }
+           currentIframe = newIframe;
+    }
 
         MainVideoTitle.textContent = title || "";
         MainVideoSubtitle.textContent = subtitle || "";
-        span.classList.add('is-active');
+
+        span.classList.add('selected');
+        if (playlistMain) playlistMain.classList.add('selected');
         activeSpan = span;
     });
-
-    const style = document.createElement('style');
-    style.innerHTML = `
-        span.is-active { pointer-events: none; opacity: 0.8; }
-        span.is-active * { pointer-events: auto; }
-    `;
-    document.head.appendChild(style);
 });
