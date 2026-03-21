@@ -62,11 +62,6 @@ body::-webkit-scrollbar-thumb {
     overflow-y: scroll;
 }
 
-.main-playlist span :hover {
-    background-color: #A8D9FF;
-    border-radius: 8px;
-}
-
 .main-playlist span:not(.is-active):hover {
     background-color: #A8D9FF;
     cursor: pointer;
