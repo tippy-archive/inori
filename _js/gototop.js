@@ -22,7 +22,7 @@ function topFunction() {
 window.addEventListener('scroll', scrollFunction);
 window.addEventListener('resize', scrollFunction);
 
-document.addEventListener('click', function (e) {
+document.addEventListener('click', function(e) {
     var clickedSpan = e.target.closest('.main-playlist span');
 
     if (clickedSpan) {
