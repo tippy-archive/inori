@@ -65,10 +65,6 @@
         margin: 10px 0;
     }
 
-    .main-list {
-        contain-intrinsic-size: auto 1000px;
-    }
-
     .list-select {
         width: calc((100vw - 30px) / 2);
     }
