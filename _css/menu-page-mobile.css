@@ -107,7 +107,7 @@
     }
 
     #search-results {
-        min-height: calc(100vh - ((100vw * 0.5625) + 1vw + 168px));
+        min-height: calc(100vh - ((100vw * 0.5625) + 1vw + 166px));
     }
 
     .search-item-animated {
