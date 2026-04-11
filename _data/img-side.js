@@ -1,5 +1,5 @@
 var delay = 6000
-var stopAfter = 120 * 1000;
+var stopAfter = 60 * 1000;
 
 var curindex = 0
 var currentActiveImageId = 'image1';
