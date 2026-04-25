@@ -6,9 +6,7 @@ window.addEventListener('load', () => {
 
     if (!VideoMain || !PlaylistContainer) return;
 
-    let myRotationInterval = window.rotationInterval; 
-    window.rotationInterval = null; 
-
+    
     const defaultTitle = MainVideoTitle.innerHTML;
     const defaultSubtitle = MainVideoSubtitle.innerHTML;
     let currentIframe = null;
@@ -31,8 +29,8 @@ window.addEventListener('load', () => {
                 currentIframe = null;
             }
 
-            if (!myRotationInterval && typeof window.rotateimage === 'function') {
-                myRotationInterval = setInterval(window.rotateimage, window.delay || 6000);
+            if (!window.rotationInterval && typeof window.rotateimage === 'function') {
+                window.rotationInterval = setInterval(window.rotateimage, window.delay || 6000);
             }
 
             MainVideoTitle.innerHTML = defaultTitle;
@@ -44,9 +42,9 @@ window.addEventListener('load', () => {
             return;
         }
 
-        if (myRotationInterval) {
-            clearInterval(myRotationInterval);
-            myRotationInterval = null;
+        if (window.rotationInterval) {
+            clearInterval(window.rotationInterval);
+            window.rotationInterval = null;
         }
 
         if (activeSpan) {
@@ -64,11 +62,10 @@ window.addEventListener('load', () => {
             newIframe.src = iframeUrl;
             newIframe.id = 'google-iframe';
             newIframe.allowFullscreen = true;
-            VideoMain.appendChild(newIframe);
             VideoMain.classList.add('video-main');
             VideoMain.appendChild(newIframe);
-           currentIframe = newIframe;
-    }
+            currentIframe = newIframe;
+        }
 
         MainVideoTitle.textContent = title || "";
         MainVideoSubtitle.textContent = subtitle || "";
