@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wrapper.className = 'search-item-animated';
 
             wrapper.innerHTML = `
-            <a href="${item.u}">
+            <a href="${item.u}" class="list-item">
                 <ul class="list-select playlist-main">
                     <li class="list-img"><img src="${item.i}"/></li>
                     <li class="list-title"><p>${item.t}</p></li>
