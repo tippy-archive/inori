@@ -10,7 +10,6 @@ var randomimages = [];
 const jsonFiles = [
   'archive/_data.json',
   'live-tour/_data.json',
-  'stream/_data.json'
 ];
 
 async function loadImagesFromJSON() {
