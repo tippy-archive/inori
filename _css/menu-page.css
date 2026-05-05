@@ -181,7 +181,7 @@ footer h5 {
     box-sizing: border-box;
 }
 
-.search-item-animated > a {
+.search-item-animated>a {
     display: flex;
     width: auto;
     height: auto;
@@ -189,7 +189,7 @@ footer h5 {
     color: inherit;
 }
 
-.search-item-animated > a:hover .playlist-main {
+.search-item-animated>a:hover .playlist-main {
     cursor: pointer;
 }
 

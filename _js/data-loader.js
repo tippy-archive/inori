@@ -1,12 +1,12 @@
-(function() {
+(function () {
     const listContainers = document.querySelectorAll('.main-list[data-json]');
-    
+
     window.globalData = window.globalData || [];
 
     (async function loadDataSequentially() {
         for (const container of listContainers) {
             const jsonUrl = container.getAttribute('data-json');
-            
+
             try {
                 const response = await fetch(jsonUrl);
                 const data = await response.json();

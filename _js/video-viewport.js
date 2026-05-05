@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
 
     if (!VideoMain || !PlaylistContainer) return;
 
-    
+
     const defaultTitle = MainVideoTitle.innerHTML;
     const defaultSubtitle = MainVideoSubtitle.innerHTML;
     let currentIframe = null;
@@ -21,7 +21,11 @@ window.addEventListener('load', () => {
         const dataSource = span.dataset.iframeUrl ? span : playlistMain;
         if (!dataSource) return;
 
-        const { iframeUrl, title, subtitle } = dataSource.dataset;
+        const {
+            iframeUrl,
+            title,
+            subtitle
+        } = dataSource.dataset;
 
         if (activeSpan === span) {
             if (currentIframe) {
@@ -37,7 +41,7 @@ window.addEventListener('load', () => {
             MainVideoSubtitle.innerHTML = defaultSubtitle;
             span.classList.remove('selected');
             if (playlistMain) playlistMain.classList.remove('selected');
-            
+
             activeSpan = null;
             return;
         }

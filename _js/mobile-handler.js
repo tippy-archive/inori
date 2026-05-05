@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const imageUrls = [
         'https://lh3.googleusercontent.com/pw/AP1GczNyDS5rKAU2TuJGTGe9L2Rk4XMrQKNW2vhMFnIgwwN3QAdwPY3nU2HQXCpK-i5kyqoNmDE7VE_2MAltlqqPFzH7WVNbIi8F6cAlU3mITnVDQAEYfnnLlxfFBbASdRG88sTt8Fi9aVXUSuGWnpoYs_c8=w800',
         'https://lh3.googleusercontent.com/pw/AP1GczN98ijUtH7k4nn6tqN_xqSmSfUGnqzkrU1TrVKGTZXQf4AeNFTtWoh2JNmpzpqCmEYKF73IP3u8JJCKIRTRgPpMIGdXZoW4I3HuXRHQbqa47S995Rz1sqd35R7DH3F_xX5ErLJ-6FsPTj1Dpo4nOSlR=w800',
@@ -38,7 +38,7 @@
     loaderText.id = 'loader-text';
     loaderText.style.cssText = `font-size: 24px; color: #6EC0FF; font-weight: bold;`;
     loaderText.innerText = 'Loading';
-    
+
     loader.appendChild(loaderImage);
     loader.appendChild(loaderText);
 
@@ -47,7 +47,7 @@
     });
 
     let dotCount = 0;
-    const dotInterval = setInterval(function() {
+    const dotInterval = setInterval(function () {
         const textElement = document.getElementById('loader-text');
         if (textElement) {
             dotCount = (dotCount + 1) % 4;
@@ -55,7 +55,7 @@
         }
     }, 300);
 
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         const loader = document.getElementById('mobile-loader');
         if (!loader) return;
 
