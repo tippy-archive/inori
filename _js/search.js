@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wrapper.innerHTML = `
             <a href="${item.u}" class="list-item">
                 <ul class="list-select playlist-main">
-                    <li class="list-img"><img src="${item.i}"/></li>
+                    <li class="list-img"><img src="${item.i.startsWith('data:image') ? item.i : `https://lh3.googleusercontent.com/pw/AP1Gcz${item.i}`}"/></li>
                     <li class="list-title"><p>${item.t}</p></li>
                 </ul>
             </a>`;

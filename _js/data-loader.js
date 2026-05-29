@@ -3,6 +3,10 @@
 
     window.globalData = window.globalData || [];
 
+    const IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
+
+    const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${IMAGE_BASE_URL}${i}`;
+
     (async function loadDataSequentially() {
         for (const container of listContainers) {
             const jsonUrl = container.getAttribute('data-json');
@@ -17,7 +21,7 @@
                     .map(item => `
                         <a href="${item.u}">
                             <ul class="list-select playlist-main">
-                                <li class="list-img"><img src="${item.i}" alt="${item.t}"/></li>
+                                <li class="list-img"><img src="${getFullImageUrl(item.i)}" alt="${item.t}"/></li>
                                 <li class="list-title"><p>${item.t}</p></li>
                             </ul>
                         </a>
