@@ -8,8 +8,7 @@ var isRotationStoppedCompletely = false;
 var randomimages = [];
 
 const jsonFiles = [
-    'live-tour/_data.json',
-    'archive/_data.json'
+    'live-tour/_data.json'
 ];
 
 async function loadImagesFromJSON() {
@@ -23,7 +22,7 @@ async function loadImagesFromJSON() {
 
         const results = await Promise.all(fetchPromises);
 
-        const allowedCategories = ['travel-record', 'music-clip-box2', 'heart-bookmark']; 
+        const allowedCategories = ['travel-record', 'heart-bookmark']; 
 
         randomimages = results.flatMap(data =>
             Object.entries(data).flatMap(([categoryName, categoryArray]) => {

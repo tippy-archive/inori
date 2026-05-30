@@ -3,9 +3,9 @@
 
     window.globalData = window.globalData || [];
 
-    const IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
+    const MENU_IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
 
-    const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${IMAGE_BASE_URL}${i}`;
+    const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BASE_URL}${i}`;
 
     (async function loadDataSequentially() {
         for (const container of listContainers) {
