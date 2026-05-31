@@ -2,7 +2,7 @@ const headerJsonFiles = [
     'live-tour/_data.json'
 ];
 
-const allowedHeaderCategories = ['travel-record', 'heart-bookmark']; 
+const allowedHeaderCategories = ['travel-record']; 
 
 const HEADER_IMAGE_BASE_URL = 'https://lh3.googleusercontent.com/pw/AP1Gcz';
 
