@@ -105,9 +105,9 @@
     }
 
     .playlist-title {
-        width: calc(100vw - 240px);
+        width: calc(100vw - 238px);
         font-size: 18px;
-        padding: 0 0 0 8px;
+        padding: 0 0 0 6px;
     }
 
     #gototop {
@@ -216,9 +216,9 @@
     }
 
     .playlist-title {
-        width: calc(86vw - 48px);
+        width: calc(86vw - 46px);
         font-size: 20px;
-        padding: 0 0 0 10px;
+        padding: 0 0 0 8px;
     }
 }
 
