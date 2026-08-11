@@ -1,3 +1,27 @@
+function updateIframeScale() {
+    const iframe = document.getElementById('google-iframe');
+    if (!iframe) return;
+
+    const wrapper = iframe.parentElement;
+    if (!wrapper) return;
+
+    const mobileMaxWidth = 480;
+    const targetWidth = 880;
+
+    if (window.innerWidth <= mobileMaxWidth) {
+        const currentWidth = wrapper.clientWidth;
+        if (currentWidth > 0) {
+            const scale = currentWidth / targetWidth;
+            iframe.style.transform = `scale(${scale})`;
+        }
+    } else {
+        iframe.style.transform = 'none';
+    }
+}
+
+window.addEventListener('resize', updateIframeScale);
+window.addEventListener('DOMContentLoaded', updateIframeScale);
+
 window.addEventListener('load', () => {
     const VideoMain = document.getElementById('video-main');
     const MainVideoTitle = document.getElementById('main-video-title');
@@ -5,7 +29,6 @@ window.addEventListener('load', () => {
     const PlaylistContainer = document.querySelector('.main-playlist');
 
     if (!VideoMain || !PlaylistContainer) return;
-
 
     const defaultTitle = MainVideoTitle.innerHTML;
     const defaultSubtitle = MainVideoSubtitle.innerHTML;
@@ -17,7 +40,6 @@ window.addEventListener('load', () => {
         if (!span) return;
 
         const playlistMain = span.querySelector('.playlist-main');
-
         const dataSource = span.dataset.iframeUrl ? span : playlistMain;
         if (!dataSource) return;
 
@@ -69,6 +91,8 @@ window.addEventListener('load', () => {
             VideoMain.classList.add('video-main');
             VideoMain.appendChild(newIframe);
             currentIframe = newIframe;
+
+            updateIframeScale();
         }
 
         MainVideoTitle.textContent = title || "";
