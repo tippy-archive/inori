@@ -69,6 +69,13 @@
         overflow: hidden;
     }
 
+    .video-main {
+        width: calc(100vw - 604px);
+        height: calc((100vw - 604px) * 0.5625);
+        max-width: 1920px;
+        max-height: 1080px;
+    }
+
     .video-main iframe {
         width: calc(100vw - 604px);
         height: calc((100vw - 604px) * 0.5625);
