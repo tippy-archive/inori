@@ -54,6 +54,11 @@
         grid-row: 1 / 2;
     }
 
+    .video-main {
+        width: 0;
+        height: 0;
+    }
+
     .video-main iframe {
         width: calc(100vw - 20px);
         height: calc((100vw - 20px) * 0.5625);
