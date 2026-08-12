@@ -190,6 +190,13 @@
         max-height: 630px;
     }
 
+    .video-main {
+        width: calc(100vw - 30px);
+        height: calc((100vw - 30px) * 0.5625);
+        max-width: 1120px;
+        max-height: 630px;
+    }
+
     .video-main iframe {
         width: calc(100vw - 30px);
         height: calc((100vw - 30px) * 0.5625);
