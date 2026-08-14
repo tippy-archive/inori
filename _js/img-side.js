@@ -22,7 +22,7 @@ async function loadImagesFromJSON() {
 
         const results = await Promise.all(fetchPromises);
 
-        const allowedCategories = ['travel-record', 'heart-bookmark']; 
+        const allowedCategories = ['travel_record', 'heart_bookmark']; 
 
         randomimages = results.flatMap(data =>
             Object.entries(data).flatMap(([categoryName, categoryArray]) => {
