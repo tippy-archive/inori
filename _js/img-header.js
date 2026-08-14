@@ -1,5 +1,5 @@
 const headerJsonFiles = [
-    'live-tour/_data.json'
+    'live_tour/_data.json'
 ];
 
 const allowedHeaderCategories = ['travel-record']; 

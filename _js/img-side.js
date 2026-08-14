@@ -8,7 +8,7 @@ var isRotationStoppedCompletely = false;
 var randomimages = [];
 
 const jsonFiles = [
-    'live-tour/_data.json'
+    'live_tour/_data.json'
 ];
 
 async function loadImagesFromJSON() {
