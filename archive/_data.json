@@ -18,7 +18,7 @@
 { "t": "미나세 이노리 7th Single", "s": "Wonder Caravan!", "l": "미나세 이노리 7th Single<br>Wonder Caravan!", "v": "1iCrtXSsLw6MKukG-u0I-tOUp2Lcq2m5I/preview", "i": "NRbfJj1GXy8NHWk4Vy9p8n1GqfHEnzgoNI4oRu_Fib8o6FrghQdQUz3TFlULN_1fmO6DLjUg6Ua-lYmV8bHMC89AWEwNIZnwOey-HJuMbKOUDtNbtzCEo499C9ZxwtxsEceiqmz4vFJHBh2lqtEV8h" },
 { "t": "미나세 이노리 キャロル 「tomorrow」", "s": "シンフォギアライブ2020→2022", "l": "미나세 이노리 キャロル 「tomorrow」<br>シンフォギアライブ2020→2022", "v": "1qW5-MBa_UvaQmb9aAuvSz50chtC0tYyU/preview", "i": "NGSATvzqglBKjyjU0jrUNgCzXSPlOCw0TLUpMbFt3sb0r9wcdSVf94QlkIFbV1v4sl36t_lOpfSZ8mI62jT8hXLw_uMaGY2WKL3AxNNfW_AmSnnSPtQPlISdOj9dRvWkksJfvV_N5CThUvhTh5JU0a" }
 ],
-"music-clip-box": [
+"music_clip_box": [
 { "t": "미나세 이노리 MUSIC CLIP BOX", "s": "01. 夢のつぼみ", "l": "MUSIC CLIP BOX<br>01. 夢のつぼみ", "v": "1G-V91xiTlYzU48edOu6B5wY4iz0S6Dm_/preview", "i": "OruvKXFrRP_RjEnBwQXvfa8ojw_XJShe-UkDC5fX5u8yMxccvC0Bos3PFWG9aFgcKwfYTbODh8hJEh__zZOyETQEelZCv-X_3rcPtmve13i9vDubSiMoEvzAA0sZKCOlJYW_085SDoeNWn_cyfUL5u" },
 { "t": "미나세 이노리 MUSIC CLIP BOX", "s": "02. harmony ribbon", "l": "MUSIC CLIP BOX<br>02. harmony ribbon", "v": "1GGYUJUDIi78H3AAWT97X1j4V4-8U2kZo/preview", "i": "MYHVy_BmJX1jYU3hRZKHuiAkM8a27AZbrj95D6R6pVv_mi0PkxkldoPEP11qn3vvhbl3zRYzqxQ3qY_zz-BJBZZQc9e-InbfLariJZOtmXPWjyI6DvNTFA3_nRcUjwD8JAubUTSczmFqeK_7jI_c_9" },
 { "t": "미나세 이노리 MUSIC CLIP BOX", "s": "03. Starry Wish", "l": "MUSIC CLIP BOX<br>03. Starry Wish", "v": "1AdrILdJiSiPJK_j1OQ-N-djiALxtBSdl/preview", "i": "M9fCFQhFm6nyhIbwJjBciALiRXX6hJu4GK_rQO9zOeqmaaYMUbmuLfkjnUi7vkL-UjFR4GDAmb7M2Q4c2XBSc9aL9xXdkGyBsjohVQXUGKfxZVwDeof3EAP2niFCZYAWZF96MFUMvzuSHFDHClhRC8" },
@@ -77,7 +77,7 @@
 { "i": "NvA-JeKOGuGJ1uCrHVfaQTgxZB1C4qbFkACIZDOoQjrk3JenNqzagBB5Nz07x21NjK-9ErFukof6QCwOpwQ1NHi3YjA9FPfDa-Eu5L032zOa9yKe0KXtb7pCamCwfQrNxu59ew1ro0S7MIU5PrtH7B" },
 { "i": "MSwbFZYkYMVpvN3S8tIlbU0AGqMMYNJVrV6zh68A-pWwCZ9KI7C0V4beDvzuEFqRM7pCM06ew1-huwPghSBkXtsvuT0nGKt5H3J5ui9cIzO3Xzk09l1fUF_QWowPiHaI6QM9pHn4D_oFIodTatxbqY" }
 ],
-"music-clip-box2": [
+"music_clip_box2": [
 { "t": "미나세 이노리 MUSIC CLIP BOX 2", "s": "01. ココロソマリ", "l": "MUSIC CLIP BOX 2<br>01. ココロソマリ", "v": "1ZlxuenLU96HAskQJPaYYMw44P955G50y/preview", "i": "MpMiAIp8UQbLYfKS5PHaVTsJwg3_DC1R-Zs7_5Y-ppsBSwDgPpK7L0gnewwoDahLAXQcPcTBg9vb2RoTnvJXJAAt_oLOPCgoDR_qtKcth4A-_2rYIx2RsKpfXoxFr1m38JighE0m06fwretkY6IRWz" },
 { "t": "미나세 이노리 MUSIC CLIP BOX 2", "s": "02. 僕らは今", "l": "MUSIC CLIP BOX 2<br>02. 僕らは今", "v": "1T6sBKEK6u-Of3j3t7-lhPdeia0LzKAa9/preview", "i": "MgdJM_rTfqQSmYSshtjP6JXg5DzxBJKZV_vhEE8sRnMSUw1HOakQtppV7DXYfUB8UyerVEZ4oDxJTn06cBdwwjbfbnG3-fNLvGhzLXAXiWhUprEuNVuE9Qhzt8Nzc2--vmCIz8FnnDobkhQEUna5nV" },
 { "t": "미나세 이노리 MUSIC CLIP BOX 2", "s": "03. Starlight Museum", "l": "MUSIC CLIP BOX 2<br>03. Starlight Museum", "v": "1otM0pieCi9KW6-jc8XX1PX2FAGu_tYND/preview", "i": "NVkpuuCWp4wZryfJgD1kcHI9sxmhxoq6Jz3t3AmY75ZLgMQjoaRoxltkxQVXwEXuSxKyzPjBRTkWMGWMvQdeKlJUlKGV1EjhKOPCh70AkdvjDeUt_QZPtxz8NarphBX-an3tQxO0vJdvU1p8ndOEcP" },
