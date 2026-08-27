@@ -21,7 +21,7 @@ async function initBackgroundImages() {
             return;
         }
 
-        const imgSuffix = window.innerWidth < 480 ? '=w640' : '=w1920';
+        const imgSuffix = window.innerWidth < 480 ? '' : '=w1920';
 
         const uniqueImages = new Set(listData.map(item => 
             `https://lh3.googleusercontent.com/pw/AP1Gcz${item.i}${imgSuffix}`
